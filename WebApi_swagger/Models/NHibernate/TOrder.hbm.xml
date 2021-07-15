@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TOrder" table="T_Order" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdOrder" column="ID_Order">
+      <generator class="native" />
+    </id>
+    <many-to-one name="TShift">
+      <column name="Shift_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TLMahaleh">
+      <column name="Mahale_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TUsers">
+      <column name="Users_ID" sql-type="bigint" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TAddresses">
+      <column name="Address_ID" sql-type="bigint" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TPeyks">
+      <column name="Peyk_ID" sql-type="bigint" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TServicer">
+      <column name="Servicer_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TLVaziyatVarizi">
+      <column name="Vaziyat_Varizi_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TLNoePay">
+      <column name="Noe_Pay_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TLVaziyatSabad">
+      <column name="Vaziyat_Sabad_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TLVaziyatTahvil">
+      <column name="Vaziyat_Tahvil_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TShift2">
+      <column name="Shift_IDTahvil" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TCodeTakhfif">
+      <column name="Code_Takhfif_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <property name="OrderDate">
+      <column name="Order_Date" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="OrderPrice">
+      <column name="Order_Price" sql-type="int" not-null="false" />
+    </property>
+    <property name="RahgiriDate">
+      <column name="Rahgiri_Date" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="RahgiriCode">
+      <column name="Rahgiri_Code" sql-type="bigint" not-null="false" />
+    </property>
+    <property name="Authority">
+      <column name="Authority" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="PeyktahvilDate">
+      <column name="PeykTahvil_Date" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="TakhfifPardakhti">
+      <column name="Takhfif_Pardakhti" sql-type="int" not-null="false" />
+    </property>
+    <property name="OrderPriceBof">
+      <column name="Order_Price_BOf" sql-type="int" not-null="false" />
+    </property>
+    <property name="OrderNow">
+      <column name="Order_Now" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="ShenaseSefaresh">
+      <column name="Shenase_Sefaresh" sql-type="bigint" not-null="false" />
+    </property>
+    <property name="PeykPrice">
+      <column name="Peyk_Price" sql-type="int" not-null="false" />
+    </property>
+    <property name="Datetahvil">
+      <column name="DateTahvil" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="MizanTakhfif">
+      <column name="Mizan_Takhfif" sql-type="int" not-null="false" />
+    </property>
+    <bag name="TSabad" inverse="true">
+      <key column="Order_ID" />
+      <one-to-many class="TSabad" />
+    </bag>
+  </class>
+</hibernate-mapping>

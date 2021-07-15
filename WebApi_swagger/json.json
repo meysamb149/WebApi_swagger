@@ -1,0 +1,1707 @@
+﻿{
+  "doc": {
+    "assembly": { "name": "WebApi_swagger" },
+    "members": {
+      "member": [
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)",
+          "summary": {
+            "#text": [
+              "\"",
+              "Generates",
+              "an",
+              "URI-friendly",
+              "ID",
+              "for",
+              "the",
+              "\",",
+              "\". E.g. \\\"Get-Values-id_name\\\" instead of \\\"GetValues/{id}?name={name}\\\"",
+              "\""
+            ],
+            "see": { "-cref": "T:System.Web.Http.Description.ApiDescription" }
+          },
+          "param": {
+            "-name": "description",
+            "#text": [
+              "The ",
+              "."
+            ],
+            "see": { "-cref": "T:System.Web.Http.Description.ApiDescription" }
+          },
+          "returns": "The ID as a string."
+        },
+        {
+          "-name": "T:WebApi_swagger.Areas.HelpPage.HelpPageConfig",
+          "summary": {
+            "#text": [
+              "\"",
+              "Use",
+              "this",
+              "class",
+              "to",
+              "customize",
+              "the",
+              "Help",
+              "Page.",
+              "For",
+              "example",
+              "you",
+              "can",
+              "set",
+              "a",
+              "custom",
+              "\",",
+              "\" to supply the documentation",
+              "or",
+              "you",
+              "can",
+              "provide",
+              "the",
+              "samples",
+              "for",
+              "the",
+              "requests/responses.",
+              "\""
+            ],
+            "see": { "-cref": "T:System.Web.Http.Description.IDocumentationProvider" }
+          }
+        },
+        {
+          "-name": "T:WebApi_swagger.Areas.HelpPage.Controllers.HelpController",
+          "summary": "\"",
+          "The" "controller",
+          "that" "will",
+          "handle" "requests",
+          "for" "the",
+          "help" "page.",
+          "\""
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)",
+          "summary": "\"",
+          "Sets" "the",
+          "documentation" "provider",
+          "for" "help",
+          "page." "\",",
+          "param": [
+            {
+              "-name": "config",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "T:System.Web.Http.HttpConfiguration" }
+            },
+            {
+              "-name": "documentationProvider",
+              "#text": "The documentation provider."
+            }
+          ]
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})",
+          "summary": "\"",
+          "Sets" "the",
+          "objects" "that",
+          "will" "be",
+          "used" "by",
+          "the" "formatters",
+          "to" "produce",
+          "sample" "requests/responses.",
+          "\",": null,
+          "param": [
+            {
+              "-name": "config",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "T:System.Web.Http.HttpConfiguration" }
+            },
+            {
+              "-name": "sampleObjects",
+              "#text": "The sample objects."
+            }
+          ]
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)",
+          "summary": "\"",
+          "Sets" "the",
+          "sample" "request",
+          "directly" "for",
+          "the" "specified",
+          "media" "type",
+          "and" "action.",
+          "\",": null,
+          "param": [
+            {
+              "-name": "config",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "T:System.Web.Http.HttpConfiguration" }
+            },
+            {
+              "-name": "sample",
+              "#text": "The sample request."
+            },
+            {
+              "-name": "mediaType",
+              "#text": "The media type."
+            },
+            {
+              "-name": "controllerName",
+              "#text": "Name of the controller."
+            },
+            {
+              "-name": "actionName",
+              "#text": "Name of the action."
+            }
+          ]
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])",
+          "summary": "\"",
+          "Sets" "the",
+          "sample" "request",
+          "directly" "for",
+          "the" "specified",
+          "media" "type",
+          "and" "action",
+          "with" "parameters.",
+          "\",": null,
+          "param": [
+            {
+              "-name": "config",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "T:System.Web.Http.HttpConfiguration" }
+            },
+            {
+              "-name": "sample",
+              "#text": "The sample request."
+            },
+            {
+              "-name": "mediaType",
+              "#text": "The media type."
+            },
+            {
+              "-name": "controllerName",
+              "#text": "Name of the controller."
+            },
+            {
+              "-name": "actionName",
+              "#text": "Name of the action."
+            },
+            {
+              "-name": "parameterNames",
+              "#text": "The parameter names."
+            }
+          ]
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)",
+          "summary": "\"",
+          "Sets" "the",
+          "sample" "request",
+          "directly" "for",
+          "the" "specified",
+          "media" "type",
+          "of" "the",
+          "action." "\",",
+          "param": [
+            {
+              "-name": "config",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "T:System.Web.Http.HttpConfiguration" }
+            },
+            {
+              "-name": "sample",
+              "#text": "The sample response."
+            },
+            {
+              "-name": "mediaType",
+              "#text": "The media type."
+            },
+            {
+              "-name": "controllerName",
+              "#text": "Name of the controller."
+            },
+            {
+              "-name": "actionName",
+              "#text": "Name of the action."
+            }
+          ]
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])",
+          "summary": "\"",
+          "Sets" "the",
+          "sample" "response",
+          "directly" "for",
+          "the" "specified",
+          "media" "type",
+          "of" "the",
+          "action" "with",
+          "specific" "parameters.",
+          "\",": null,
+          "param": [
+            {
+              "-name": "config",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "T:System.Web.Http.HttpConfiguration" }
+            },
+            {
+              "-name": "sample",
+              "#text": "The sample response."
+            },
+            {
+              "-name": "mediaType",
+              "#text": "The media type."
+            },
+            {
+              "-name": "controllerName",
+              "#text": "Name of the controller."
+            },
+            {
+              "-name": "actionName",
+              "#text": "Name of the action."
+            },
+            {
+              "-name": "parameterNames",
+              "#text": "The parameter names."
+            }
+          ]
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)",
+          "summary": "\"",
+          "Sets" "the",
+          "sample" "directly",
+          "for" "all",
+          "actions" "with",
+          "the" "specified",
+          "media" "type.",
+          "\",": null,
+          "param": [
+            {
+              "-name": "config",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "T:System.Web.Http.HttpConfiguration" }
+            },
+            {
+              "-name": "sample",
+              "#text": "The sample."
+            },
+            {
+              "-name": "mediaType",
+              "#text": "The media type."
+            }
+          ]
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)",
+          "summary": "\"",
+          "Sets" "the",
+          "sample" "directly",
+          "for" "all",
+          "actions" "with",
+          "the" "specified",
+          "type" "and",
+          "media" "type.",
+          "\",": null,
+          "param": [
+            {
+              "-name": "config",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "T:System.Web.Http.HttpConfiguration" }
+            },
+            {
+              "-name": "sample",
+              "#text": "The sample."
+            },
+            {
+              "-name": "mediaType",
+              "#text": "The media type."
+            },
+            {
+              "-name": "type",
+              "#text": "The parameter type or return type of an action."
+            }
+          ]
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)",
+          "summary": {
+            "#text": [
+              "\"",
+              "Specifies",
+              "the",
+              "actual",
+              "type",
+              "of",
+              "\",",
+              " passed to the ",
+              "\" in an action.",
+              "The",
+              "help",
+              "page",
+              "will",
+              "use",
+              "this",
+              "information",
+              "to",
+              "produce",
+              "more",
+              "accurate",
+              "request",
+              "samples.",
+              "\""
+            ],
+            "see": [
+              { "-cref": "T:System.Net.Http.ObjectContent`1" },
+              { "-cref": "T:System.Net.Http.HttpRequestMessage" }
+            ]
+          },
+          "param": [
+            {
+              "-name": "config",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "T:System.Web.Http.HttpConfiguration" }
+            },
+            {
+              "-name": "type",
+              "#text": "The type."
+            },
+            {
+              "-name": "controllerName",
+              "#text": "Name of the controller."
+            },
+            {
+              "-name": "actionName",
+              "#text": "Name of the action."
+            }
+          ]
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])",
+          "summary": {
+            "#text": [
+              "\"",
+              "Specifies",
+              "the",
+              "actual",
+              "type",
+              "of",
+              "\",",
+              " passed to the ",
+              "\" in an action.",
+              "The",
+              "help",
+              "page",
+              "will",
+              "use",
+              "this",
+              "information",
+              "to",
+              "produce",
+              "more",
+              "accurate",
+              "request",
+              "samples.",
+              "\""
+            ],
+            "see": [
+              { "-cref": "T:System.Net.Http.ObjectContent`1" },
+              { "-cref": "T:System.Net.Http.HttpRequestMessage" }
+            ]
+          },
+          "param": [
+            {
+              "-name": "config",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "T:System.Web.Http.HttpConfiguration" }
+            },
+            {
+              "-name": "type",
+              "#text": "The type."
+            },
+            {
+              "-name": "controllerName",
+              "#text": "Name of the controller."
+            },
+            {
+              "-name": "actionName",
+              "#text": "Name of the action."
+            },
+            {
+              "-name": "parameterNames",
+              "#text": "The parameter names."
+            }
+          ]
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)",
+          "summary": {
+            "#text": [
+              "\"",
+              "Specifies",
+              "the",
+              "actual",
+              "type",
+              "of",
+              "\",",
+              " returned as part of the ",
+              "\" in an action.",
+              "The",
+              "help",
+              "page",
+              "will",
+              "use",
+              "this",
+              "information",
+              "to",
+              "produce",
+              "more",
+              "accurate",
+              "response",
+              "samples.",
+              "\""
+            ],
+            "see": [
+              { "-cref": "T:System.Net.Http.ObjectContent`1" },
+              { "-cref": "T:System.Net.Http.HttpRequestMessage" }
+            ]
+          },
+          "param": [
+            {
+              "-name": "config",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "T:System.Web.Http.HttpConfiguration" }
+            },
+            {
+              "-name": "type",
+              "#text": "The type."
+            },
+            {
+              "-name": "controllerName",
+              "#text": "Name of the controller."
+            },
+            {
+              "-name": "actionName",
+              "#text": "Name of the action."
+            }
+          ]
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])",
+          "summary": {
+            "#text": [
+              "\"",
+              "Specifies",
+              "the",
+              "actual",
+              "type",
+              "of",
+              "\",",
+              " returned as part of the ",
+              "\" in an action.",
+              "The",
+              "help",
+              "page",
+              "will",
+              "use",
+              "this",
+              "information",
+              "to",
+              "produce",
+              "more",
+              "accurate",
+              "response",
+              "samples.",
+              "\""
+            ],
+            "see": [
+              { "-cref": "T:System.Net.Http.ObjectContent`1" },
+              { "-cref": "T:System.Net.Http.HttpRequestMessage" }
+            ]
+          },
+          "param": [
+            {
+              "-name": "config",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "T:System.Web.Http.HttpConfiguration" }
+            },
+            {
+              "-name": "type",
+              "#text": "The type."
+            },
+            {
+              "-name": "controllerName",
+              "#text": "Name of the controller."
+            },
+            {
+              "-name": "actionName",
+              "#text": "Name of the action."
+            },
+            {
+              "-name": "parameterNames",
+              "#text": "The parameter names."
+            }
+          ]
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)",
+          "summary": "\"",
+          "Gets" "the",
+          "help" "page",
+          "sample" "generator.",
+          "\",": null,
+          "param": {
+            "-name": "config",
+            "#text": [
+              "The ",
+              "."
+            ],
+            "see": { "-cref": "T:System.Web.Http.HttpConfiguration" }
+          },
+          "returns": "The help page sample generator."
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator)",
+          "summary": "\"",
+          "Sets" "the",
+          "help" "page",
+          "sample" "generator.",
+          "\",": null,
+          "param": [
+            {
+              "-name": "config",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "T:System.Web.Http.HttpConfiguration" }
+            },
+            {
+              "-name": "sampleGenerator",
+              "#text": "The help page sample generator."
+            }
+          ]
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)",
+          "summary": "\"",
+          "Gets" "the",
+          "model" "description",
+          "generator." "\",",
+          "param": {
+            "-name": "config",
+            "#text": "The configuration."
+          },
+          "returns": {
+            "#text": "The ",
+            "see": { "-cref": "T:WebApi_swagger.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator" }
+          }
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)",
+          "summary": "\"",
+          "Gets" "the",
+          "model" "that",
+          "represents" "an",
+          "API" "displayed",
+          "on" "the",
+          "help" "page.",
+          "The" "model",
+          "is" "initialized",
+          "on" "the",
+          "first" "call",
+          "and" "cached",
+          "for" "subsequent",
+          "calls." "\",",
+          "param": [
+            {
+              "-name": "config",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "T:System.Web.Http.HttpConfiguration" }
+            },
+            {
+              "-name": "apiDescriptionId",
+              "#text": [
+                "The ",
+                " ID."
+              ],
+              "see": { "-cref": "T:System.Web.Http.Description.ApiDescription" }
+            }
+          ],
+          "returns": {
+            "#text": "\"",
+            "An" "\",",
+            "see": { "-cref": "T:WebApi_swagger.Areas.HelpPage.Models.HelpPageApiModel" }
+          }
+        },
+        {
+          "-name": "T:WebApi_swagger.Areas.HelpPage.ModelDescriptions.ModelDescription",
+          "summary": "\"",
+          "Describes" "a",
+          "type" "model.",
+          "\""
+        },
+        {
+          "-name": "T:WebApi_swagger.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator",
+          "summary": "\"",
+          "Generates" "model",
+          "descriptions" "for",
+          "given" "types.",
+          "\""
+        },
+        {
+          "-name": "T:WebApi_swagger.Areas.HelpPage.ModelDescriptions.ModelNameAttribute",
+          "summary": {
+            "#text": [
+              "\"",
+              "Use",
+              "this",
+              "attribute",
+              "to",
+              "change",
+              "the",
+              "name",
+              "of",
+              "the",
+              "\",",
+              "\" generated for a type.",
+              "\""
+            ],
+            "see": { "-cref": "T:WebApi_swagger.Areas.HelpPage.ModelDescriptions.ModelDescription" }
+          }
+        },
+        {
+          "-name": "T:WebApi_swagger.Areas.HelpPage.Models.HelpPageApiModel",
+          "summary": "\"",
+          "The" "model",
+          "that" "represents",
+          "an" "API",
+          "displayed" "on",
+          "the" "help",
+          "page." "\""
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.Models.HelpPageApiModel.#ctor",
+          "summary": {
+            "#text": [
+              "\"",
+              "Initializes",
+              "a",
+              "new",
+              "instance",
+              "of",
+              "the",
+              "\",",
+              "\" class.",
+              "\""
+            ],
+            "see": { "-cref": "T:WebApi_swagger.Areas.HelpPage.Models.HelpPageApiModel" }
+          }
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription",
+          "summary": {
+            "#text": [
+              "\"",
+              "Gets",
+              "or",
+              "sets",
+              "the",
+              "\",",
+              "\" that describes the API.",
+              "\""
+            ],
+            "see": { "-cref": "P:WebApi_swagger.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription" }
+          }
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.Models.HelpPageApiModel.UriParameters",
+          "summary": {
+            "#text": [
+              "\"",
+              "Gets",
+              "or",
+              "sets",
+              "the",
+              "\",",
+              "\" collection that describes the URI parameters for the API.",
+              "\""
+            ],
+            "see": { "-cref": "T:WebApi_swagger.Areas.HelpPage.ModelDescriptions.ParameterDescription" }
+          }
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation",
+          "summary": "\"",
+          "Gets" "or",
+          "sets" "the",
+          "documentation" "for",
+          "the" "request.",
+          "\""
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription",
+          "summary": {
+            "#text": [
+              "\"",
+              "Gets",
+              "or",
+              "sets",
+              "the",
+              "\",",
+              "\" that describes the request body.",
+              "\""
+            ],
+            "see": { "-cref": "T:WebApi_swagger.Areas.HelpPage.ModelDescriptions.ModelDescription" }
+          }
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters",
+          "summary": "\"",
+          "Gets" "the",
+          "request" "body",
+          "parameter" "descriptions.",
+          "\""
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription",
+          "summary": {
+            "#text": [
+              "\"",
+              "Gets",
+              "or",
+              "sets",
+              "the",
+              "\",",
+              "\" that describes the resource.",
+              "\""
+            ],
+            "see": { "-cref": "T:WebApi_swagger.Areas.HelpPage.ModelDescriptions.ModelDescription" }
+          }
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties",
+          "summary": "\"",
+          "Gets" "the",
+          "resource" "property",
+          "descriptions." "\""
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests",
+          "summary": "\"",
+          "Gets" "the",
+          "sample" "requests",
+          "associated" "with",
+          "the" "API.",
+          "\""
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses",
+          "summary": "\"",
+          "Gets" "the",
+          "sample" "responses",
+          "associated" "with",
+          "the" "API.",
+          "\""
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages",
+          "summary": "\"",
+          "Gets" "the",
+          "error" "messages",
+          "associated" "with",
+          "this" "model.",
+          "\""
+        },
+        {
+          "-name": "T:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator",
+          "summary": "\"",
+          "This" "class",
+          "will" "generate",
+          "the" "samples",
+          "for" "the",
+          "help" "page.",
+          "\""
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator.#ctor",
+          "summary": {
+            "#text": [
+              "\"",
+              "Initializes",
+              "a",
+              "new",
+              "instance",
+              "of",
+              "the",
+              "\",",
+              "\" class.",
+              "\""
+            ],
+            "see": { "-cref": "T:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator" }
+          }
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes",
+          "summary": {
+            "#text": [
+              "\"",
+              "Gets",
+              "CLR",
+              "types",
+              "that",
+              "are",
+              "used",
+              "as",
+              "the",
+              "content",
+              "of",
+              "\",",
+              " or ",
+              "\".",
+              "\""
+            ],
+            "see": [
+              { "-cref": "T:System.Net.Http.HttpRequestMessage" },
+              { "-cref": "T:System.Net.Http.HttpResponseMessage" }
+            ]
+          }
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples",
+          "summary": "\"",
+          "Gets" "the",
+          "objects" "that",
+          "are" "used",
+          "directly" "as",
+          "samples" "for",
+          "certain" "actions.",
+          "\""
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects",
+          "summary": "\"",
+          "Gets" "the",
+          "objects" "that",
+          "are" "serialized",
+          "as" "samples",
+          "by" "the",
+          "supported" "formatters.",
+          "\""
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories",
+          "summary": {
+            "#text": [
+              "\"",
+              "Gets",
+              "factories",
+              "for",
+              "the",
+              "objects",
+              "that",
+              "the",
+              "supported",
+              "formatters",
+              "will",
+              "serialize",
+              "as",
+              "samples.",
+              "Processed",
+              "in",
+              "order",
+              "stopping",
+              "when",
+              "the",
+              "factory",
+              "successfully",
+              "returns",
+              "a",
+              "non-\",",
+              "\" object.",
+              "\""
+            ],
+            "see": { "-langref": "null" }
+          },
+          "remarks": {
+            "#text": [
+              "\"",
+              "Collection",
+              "includes",
+              "just",
+              "\",",
+              "\" initially. Use",
+              "\",",
+              "\" to provide an override and",
+              "\",",
+              " to provide a fallback."
+            ],
+            "see": { "-cref": "M:WebApi_swagger.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)" },
+            "code": [
+              "SampleObjectFactories.Insert(0, func)",
+              "SampleObjectFactories.Add(func)"
+            ]
+          }
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)",
+          "summary": {
+            "#text": [
+              "\"",
+              "Gets",
+              "the",
+              "request",
+              "body",
+              "samples",
+              "for",
+              "a",
+              "given",
+              "\",",
+              "\".",
+              "\""
+            ],
+            "see": { "-cref": "T:System.Web.Http.Description.ApiDescription" }
+          },
+          "param": {
+            "-name": "api",
+            "#text": [
+              "The ",
+              "."
+            ],
+            "see": { "-cref": "T:System.Web.Http.Description.ApiDescription" }
+          },
+          "returns": "The samples keyed by media type."
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)",
+          "summary": {
+            "#text": [
+              "\"",
+              "Gets",
+              "the",
+              "response",
+              "body",
+              "samples",
+              "for",
+              "a",
+              "given",
+              "\",",
+              "\".",
+              "\""
+            ],
+            "see": { "-cref": "T:System.Web.Http.Description.ApiDescription" }
+          },
+          "param": {
+            "-name": "api",
+            "#text": [
+              "The ",
+              "."
+            ],
+            "see": { "-cref": "T:System.Web.Http.Description.ApiDescription" }
+          },
+          "returns": "The samples keyed by media type."
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,WebApi_swagger.Areas.HelpPage.SampleDirection)",
+          "summary": "\"",
+          "Gets" "the",
+          "request" "or",
+          "response" "body",
+          "samples." "\",",
+          "param": [
+            {
+              "-name": "api",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "T:System.Web.Http.Description.ApiDescription" }
+            },
+            {
+              "-name": "sampleDirection",
+              "#text": "The value indicating whether the sample is for a request or for a response."
+            }
+          ],
+          "returns": "The samples keyed by media type."
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,WebApi_swagger.Areas.HelpPage.SampleDirection)",
+          "summary": {
+            "#text": [
+              "\"",
+              "Search",
+              "for",
+              "samples",
+              "that",
+              "are",
+              "provided",
+              "directly",
+              "through",
+              "\",",
+              "\".",
+              "\""
+            ],
+            "see": { "-cref": "P:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples" }
+          },
+          "param": [
+            {
+              "-name": "controllerName",
+              "#text": "Name of the controller."
+            },
+            {
+              "-name": "actionName",
+              "#text": "Name of the action."
+            },
+            {
+              "-name": "parameterNames",
+              "#text": "The parameter names."
+            },
+            {
+              "-name": "type",
+              "#text": "The CLR type."
+            },
+            {
+              "-name": "formatter",
+              "#text": "The formatter."
+            },
+            {
+              "-name": "mediaType",
+              "#text": "The media type."
+            },
+            {
+              "-name": "sampleDirection",
+              "#text": "The value indicating whether the sample is for a request or for a response."
+            }
+          ],
+          "returns": "The sample that matches the parameters."
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)",
+          "summary": {
+            "#text": [
+              "\"",
+              "Gets",
+              "the",
+              "sample",
+              "object",
+              "that",
+              "will",
+              "be",
+              "serialized",
+              "by",
+              "the",
+              "formatters.",
+              "First",
+              "it",
+              "will",
+              "look",
+              "at",
+              "the",
+              "\",",
+              "\". If no sample object is found, it will try to create",
+              "one",
+              "using",
+              "\",",
+              " (which wraps an ",
+              "\") and other",
+              "factories",
+              "in",
+              "\",",
+              "\".",
+              "\""
+            ],
+            "see": [
+              { "-cref": "P:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects" },
+              { "-cref": "M:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator,System.Type)" },
+              { "-cref": "T:WebApi_swagger.Areas.HelpPage.ObjectGenerator" },
+              { "-cref": "P:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories" }
+            ]
+          },
+          "param": {
+            "-name": "type",
+            "#text": "The type."
+          },
+          "returns": "The sample object."
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)",
+          "summary": {
+            "#text": [
+              "\"",
+              "Resolves",
+              "the",
+              "actual",
+              "type",
+              "of",
+              "\",",
+              " passed to the ",
+              "\" in an action.",
+              "\""
+            ],
+            "see": [
+              { "-cref": "T:System.Net.Http.ObjectContent`1" },
+              { "-cref": "T:System.Net.Http.HttpRequestMessage" }
+            ]
+          },
+          "param": {
+            "-name": "api",
+            "#text": [
+              "The ",
+              "."
+            ],
+            "see": { "-cref": "T:System.Web.Http.Description.ApiDescription" }
+          },
+          "returns": "The type."
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},WebApi_swagger.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)",
+          "summary": {
+            "#text": [
+              "\"",
+              "Resolves",
+              "the",
+              "type",
+              "of",
+              "the",
+              "action",
+              "parameter",
+              "or",
+              "return",
+              "value",
+              "when",
+              "\",",
+              " or ",
+              "\" is used.",
+              "\""
+            ],
+            "see": [
+              { "-cref": "T:System.Net.Http.HttpRequestMessage" },
+              { "-cref": "T:System.Net.Http.HttpResponseMessage" }
+            ]
+          },
+          "param": [
+            {
+              "-name": "api",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "T:System.Web.Http.Description.ApiDescription" }
+            },
+            {
+              "-name": "controllerName",
+              "#text": "Name of the controller."
+            },
+            {
+              "-name": "actionName",
+              "#text": "Name of the action."
+            },
+            {
+              "-name": "parameterNames",
+              "#text": "The parameter names."
+            },
+            {
+              "-name": "sampleDirection",
+              "#text": "The value indicating whether the sample is for a request or a response."
+            },
+            {
+              "-name": "formatters",
+              "#text": "The formatters."
+            }
+          ]
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)",
+          "summary": "\"",
+          "Writes" "the",
+          "sample" "object",
+          "using" "formatter.",
+          "\",": null,
+          "param": [
+            {
+              "-name": "formatter",
+              "#text": "The formatter."
+            },
+            {
+              "-name": "value",
+              "#text": "The value."
+            },
+            {
+              "-name": "type",
+              "#text": "The type."
+            },
+            {
+              "-name": "mediaType",
+              "#text": "Type of the media."
+            }
+          ]
+        },
+        {
+          "-name": "T:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey",
+          "summary": "\"",
+          "This" "is",
+          "used" "to",
+          "identify" "the",
+          "place" "where",
+          "the" "sample",
+          "should" "be",
+          "applied." "\""
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)",
+          "summary": {
+            "#text": [
+              "\"",
+              "Creates",
+              "a",
+              "new",
+              "\",",
+              "\" based on media type.",
+              "\""
+            ],
+            "see": { "-cref": "T:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey" }
+          },
+          "param": {
+            "-name": "mediaType",
+            "#text": "The media type."
+          }
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)",
+          "summary": {
+            "#text": [
+              "\"",
+              "Creates",
+              "a",
+              "new",
+              "\",",
+              "\" based on media type and CLR type.",
+              "\""
+            ],
+            "see": { "-cref": "T:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey" }
+          },
+          "param": [
+            {
+              "-name": "mediaType",
+              "#text": "The media type."
+            },
+            {
+              "-name": "type",
+              "#text": "The CLR type."
+            }
+          ]
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey.#ctor(WebApi_swagger.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})",
+          "summary": {
+            "#text": [
+              "\"",
+              "Creates",
+              "a",
+              "new",
+              "\",",
+              " based on ",
+              "\", controller name, action name and parameter names.",
+              "\""
+            ],
+            "see": [
+              { "-cref": "T:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey" },
+              { "-cref": "P:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey.SampleDirection" }
+            ]
+          },
+          "param": [
+            {
+              "-name": "sampleDirection",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "P:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey.SampleDirection" }
+            },
+            {
+              "-name": "controllerName",
+              "#text": "Name of the controller."
+            },
+            {
+              "-name": "actionName",
+              "#text": "Name of the action."
+            },
+            {
+              "-name": "parameterNames",
+              "#text": "The parameter names."
+            }
+          ]
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,WebApi_swagger.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})",
+          "summary": {
+            "#text": [
+              "\"",
+              "Creates",
+              "a",
+              "new",
+              "\",",
+              " based on media type, ",
+              "\", controller name, action name and parameter names.",
+              "\""
+            ],
+            "see": [
+              { "-cref": "T:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey" },
+              { "-cref": "P:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey.SampleDirection" }
+            ]
+          },
+          "param": [
+            {
+              "-name": "mediaType",
+              "#text": "The media type."
+            },
+            {
+              "-name": "sampleDirection",
+              "#text": [
+                "The ",
+                "."
+              ],
+              "see": { "-cref": "P:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey.SampleDirection" }
+            },
+            {
+              "-name": "controllerName",
+              "#text": "Name of the controller."
+            },
+            {
+              "-name": "actionName",
+              "#text": "Name of the action."
+            },
+            {
+              "-name": "parameterNames",
+              "#text": "The parameter names."
+            }
+          ]
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey.ControllerName",
+          "summary": "\"",
+          "Gets" "the",
+          "name" "of",
+          "the" "controller.",
+          "\",": null,
+          "value": "\"",
+          "The" "name",
+          "of" "the",
+          "controller." "\""
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey.ActionName",
+          "summary": "\"",
+          "Gets" "the",
+          "name" "of",
+          "the" "action.",
+          "\",": null,
+          "value": "\"",
+          "The" "name",
+          "of" "the",
+          "action." "\""
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey.MediaType",
+          "summary": "\"",
+          "Gets" "the",
+          "media" "type.",
+          "\",": null,
+          "value": "\"",
+          "The" "media",
+          "type." "\""
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey.ParameterNames",
+          "summary": "\"",
+          "Gets" "the",
+          "parameter" "names.",
+          "\""
+        },
+        {
+          "-name": "P:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey.SampleDirection",
+          "summary": {
+            "#text": [
+              "\"",
+              "Gets",
+              "the",
+              "\",",
+              "\".",
+              "\""
+            ],
+            "see": { "-cref": "P:WebApi_swagger.Areas.HelpPage.HelpPageSampleKey.SampleDirection" }
+          }
+        },
+        {
+          "-name": "T:WebApi_swagger.Areas.HelpPage.ImageSample",
+          "summary": "\"",
+          "This" "represents",
+          "an" "image",
+          "sample" "on",
+          "the" "help",
+          "page." "There's a display template named ImageSample associated with this class.",
+          "\""
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.ImageSample.#ctor(System.String)",
+          "summary": {
+            "#text": [
+              "\"",
+              "Initializes",
+              "a",
+              "new",
+              "instance",
+              "of",
+              "the",
+              "\",",
+              "\" class.",
+              "\""
+            ],
+            "see": { "-cref": "T:WebApi_swagger.Areas.HelpPage.ImageSample" }
+          },
+          "param": {
+            "-name": "src",
+            "#text": "The URL of an image."
+          }
+        },
+        {
+          "-name": "T:WebApi_swagger.Areas.HelpPage.InvalidSample",
+          "summary": "\"",
+          "This" "represents",
+          "an" "invalid",
+          "sample" "on",
+          "the" "help",
+          "page." "There's a display template named InvalidSample associated with this class.",
+          "\""
+        },
+        {
+          "-name": "T:WebApi_swagger.Areas.HelpPage.ObjectGenerator",
+          "summary": "\"",
+          "This" "class",
+          "will" "create",
+          "an" "object",
+          "of" "a",
+          "given" "type",
+          "and" "populate",
+          "it" "with",
+          "sample" "data.",
+          "\""
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)",
+          "summary": {
+            "#text": [
+              "\"",
+              "Generates",
+              "an",
+              "object",
+              "for",
+              "a",
+              "given",
+              "type.",
+              "The",
+              "type",
+              "needs",
+              "to",
+              "be",
+              "public",
+              "have",
+              "a",
+              "public",
+              "default",
+              "constructor",
+              "and",
+              "settable",
+              "public",
+              "properties/fields.",
+              "Currently",
+              "it",
+              "supports",
+              "the",
+              "following",
+              "types",
+              "Simple",
+              "types",
+              "\",",
+              ", ",
+              ", ",
+              ", ",
+              ", ",
+              "\", etc.",
+              "Complex",
+              "types",
+              "POCO",
+              "types.",
+              "Nullables",
+              "\",",
+              "\".",
+              "Arrays",
+              "arrays",
+              "of",
+              "simple",
+              "types",
+              "or",
+              "complex",
+              "types.",
+              "Key",
+              "value",
+              "pairs",
+              "\",",
+              "\"",
+              "Tuples",
+              "\",",
+              ", ",
+              "\", etc",
+              "Dictionaries",
+              "\",",
+              " or anything deriving from ",
+              "\".",
+              "Collections",
+              "\",",
+              ", ",
+              ", ",
+              ", ",
+              ", ",
+              ", ",
+              " or anything deriving from ",
+              " or ",
+              "\".",
+              "Queryables",
+              "\",",
+              ", ",
+              "\".",
+              "\""
+            ],
+            "see": [
+              { "-cref": "T:System.Int32" },
+              { "-cref": "T:System.String" },
+              { "-cref": "T:System.Enum" },
+              { "-cref": "T:System.DateTime" },
+              { "-cref": "T:System.Uri" },
+              { "-cref": "T:System.Nullable`1" },
+              { "-cref": "T:System.Collections.Generic.KeyValuePair`2" },
+              { "-cref": "T:System.Tuple`1" },
+              { "-cref": "T:System.Tuple`2" },
+              { "-cref": "T:System.Collections.Generic.IDictionary`2" },
+              { "-cref": "T:System.Collections.Generic.IDictionary`2" },
+              { "-cref": "T:System.Collections.Generic.IList`1" },
+              { "-cref": "T:System.Collections.Generic.IEnumerable`1" },
+              { "-cref": "T:System.Collections.Generic.ICollection`1" },
+              { "-cref": "T:System.Collections.IList" },
+              { "-cref": "T:System.Collections.IEnumerable" },
+              { "-cref": "T:System.Collections.ICollection" },
+              { "-cref": "T:System.Collections.Generic.ICollection`1" },
+              { "-cref": "T:System.Collections.IList" },
+              { "-cref": "T:System.Linq.IQueryable" },
+              { "-cref": "T:System.Linq.IQueryable`1" }
+            ]
+          },
+          "param": {
+            "-name": "type",
+            "#text": "The type."
+          },
+          "returns": "An object of the given type."
+        },
+        {
+          "-name": "T:WebApi_swagger.Areas.HelpPage.SampleDirection",
+          "summary": "\"",
+          "Indicates" "whether",
+          "the" "sample",
+          "is" "used",
+          "for" "request",
+          "or" "response",
+          "\""
+        },
+        {
+          "-name": "T:WebApi_swagger.Areas.HelpPage.TextSample",
+          "summary": "\"",
+          "This" "represents",
+          "a" "preformatted",
+          "text" "sample",
+          "on" "the",
+          "help" "page.",
+          "There's a display template named TextSample associated with this class." "\""
+        },
+        {
+          "-name": "T:WebApi_swagger.Areas.HelpPage.XmlDocumentationProvider",
+          "summary": {
+            "#text": [
+              "\"",
+              "A",
+              "custom",
+              "\",",
+              "\" that reads the API documentation from an XML documentation file.",
+              "\""
+            ],
+            "see": { "-cref": "T:System.Web.Http.Description.IDocumentationProvider" }
+          }
+        },
+        {
+          "-name": "M:WebApi_swagger.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)",
+          "summary": {
+            "#text": [
+              "\"",
+              "Initializes",
+              "a",
+              "new",
+              "instance",
+              "of",
+              "the",
+              "\",",
+              "\" class.",
+              "\""
+            ],
+            "see": { "-cref": "T:WebApi_swagger.Areas.HelpPage.XmlDocumentationProvider" }
+          },
+          "param": {
+            "-name": "documentPath",
+            "#text": "The physical path to XML document."
+          }
+        },
+        {
+          "-name": "T:WebApi_swagger.Models.TAnswerG1",
+          "summary": "\"",
+          "controller" "\""
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TCGoZarfiyatShServiser" table="T_C_Go_Zarfiyat_Sh_Serviser" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdCGoZarfiyatShServiser" column="ID_C_Go_Zarfiyat_Sh_Serviser">
+      <generator class="native" />
+    </id>
+    <many-to-one name="TServicer">
+      <column name="Servicer_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <property name="ShiftId">
+      <column name="Shift_ID" sql-type="int" not-null="false" />
+    </property>
+    <property name="CountGoService">
+      <column name="Count_Go_Service" sql-type="int" not-null="false" />
+    </property>
+    <property name="Datenowgo">
+      <column name="DateNowGo" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="CountDeliveryService">
+      <column name="Count_Delivery_Service" sql-type="int" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

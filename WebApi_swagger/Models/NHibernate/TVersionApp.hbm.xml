@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TVersionApp" table="T_Version_App" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdVersionApp" column="ID_Version_App">
+      <generator class="native" />
+    </id>
+    <property name="TextForVersion">
+      <column name="Text_For_Version" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="VersionCode">
+      <column name="Version_Code" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="DateCreate">
+      <column name="Date_Create" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="UserId">
+      <column name="User_ID" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="VersionAppType">
+      <column name="VersionAppType" sql-type="nvarchar" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

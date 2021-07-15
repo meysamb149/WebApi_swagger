@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TActivationCode" table="T_Activation_Code" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdActivationCode" column="ID_Activation_Code">
+      <generator class="native" />
+    </id>
+    <many-to-one name="TUsers">
+      <column name="User_ID" sql-type="bigint" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TPeyks">
+      <column name="Peyk_ID" sql-type="bigint" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TServicer">
+      <column name="Servicer_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <property name="Tell">
+      <column name="Tell" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="DeviceId">
+      <column name="Device_ID" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="Code">
+      <column name="Code" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="CodeGenerationTime">
+      <column name="Code_Generation_Time" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="EnterCount">
+      <column name="Enter_Count" sql-type="int" not-null="false" />
+    </property>
+    <property name="IsDeletedTime">
+      <column name="Is_Deleted_Time" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="AdminId">
+      <column name="Admin_ID" sql-type="int" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

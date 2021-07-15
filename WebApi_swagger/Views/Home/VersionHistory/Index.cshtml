@@ -1,0 +1,36 @@
+﻿@model SimpleSyndicate.Mvc.Controllers.VersionHistory.IndexViewModel
+@{
+	ViewBag.Section = "Home";
+	ViewBag.Title = "Version History";
+}
+@{
+	try
+	{
+		@Html.Partial("_IndexHeader");
+	}
+	catch (InvalidOperationException)
+	{
+		<h2>@ViewBag.Title</h2>
+		<p>
+			Below are the details for each release of this application.
+		</p>
+	}
+}
+
+<table class="table">
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@(item.MajorVersion).@(item.MinorVersion).@(item.PointVersion)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.ReleaseDate)
+			</td>
+			<td>
+				@Html.Raw(item.ReleaseNotes)
+			</td>
+		</tr>
+	}
+
+</table>

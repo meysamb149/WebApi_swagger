@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TServicer" table="T_Servicer" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdServicer" column="ID_Servicer">
+      <generator class="native" />
+     </id>
+    <many-to-one name="TLActive">
+      <column name="Active_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TLaw">
+      <column name="Last_Law_Accepted_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <property name="NameServicer">
+      <column name="Name_Servicer" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="Address">
+      <column name="Address" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="Img">
+      <column name="Img" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="Phone1">
+      <column name="Phone1" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="Phone2">
+      <column name="Phone2" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="NameFamilyAdminServicer">
+      <column name="Name_Family_Admin_Servicer" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="PhoneAdmin">
+      <column name="Phone_Admin" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="CodeMaliAdmin">
+      <column name="Code_Mali_Admin" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="NumberGharardad">
+      <column name="Number_Gharardad" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="NumberCartBank">
+      <column name="Number_Cart_Bank" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="ShabaCartBank">
+      <column name="Shaba_Cart_Bank" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="NameBank">
+      <column name="Name_Bank" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="UsernameCartBank">
+      <column name="Username_Cart_Bank" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="Latitude">
+      <column name="Latitude" sql-type="decimal" not-null="false" />
+    </property>
+    <property name="Longitude">
+      <column name="Longitude" sql-type="decimal" not-null="false" />
+    </property>
+    <property name="AvgRank">
+      <column name="Avg_Rank" sql-type="int" not-null="false" />
+    </property>
+    <property name="OstanId">
+      <column name="Ostan_ID" sql-type="int" not-null="false" />
+    </property>
+    <property name="CityId">
+      <column name="City_ID" sql-type="int" not-null="false" />
+    </property>
+    <property name="CNazarat">
+      <column name="C_Nazarat" sql-type="int" not-null="false" />
+    </property>
+    <property name="Activation">
+      <column name="Activation" sql-type="int" not-null="false" />
+    </property>
+    <property name="DeviceIdLogin">
+      <column name="Device_ID_login" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="IsDeleted">
+      <column name="Is_Deleted" sql-type="int" not-null="false" />
+    </property>
+    <property name="Pass">
+      <column name="Pass" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="Telegram">
+      <column name="Telegram" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="Instagram">
+      <column name="Instagram" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="Whatsapp">
+      <column name="WhatsApp" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="OtherPage">
+      <column name="Other_Page" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="TozihatKhedmat">
+      <column name="Tozihat_Khedmat" sql-type="nvarchar" not-null="false" />
+    </property>
+    <bag name="TActivationCode" inverse="true">
+      <key column="Servicer_ID" />
+      <one-to-many class="TActivationCode" />
+    </bag>
+    <bag name="TCGoZarfiyatShServiser" inverse="true">
+      <key column="Servicer_ID" />
+      <one-to-many class="TCGoZarfiyatShServiser" />
+    </bag>
+    <bag name="TCodeTakhfif" inverse="true">
+      <key column="T_Services_ID" />
+      <one-to-many class="TCodeTakhfif" />
+    </bag>
+    <bag name="THoliday" inverse="true">
+      <key column="Holiday_Servicer_ID" />
+      <one-to-many class="THoliday" />
+    </bag>
+    <bag name="TNazaratForServicer" inverse="true">
+      <key column="Servicer_ID" />
+      <one-to-many class="TNazaratForServicer" />
+    </bag>
+    <bag name="TNoeProduct" inverse="true">
+      <key column="Serviser_ID" />
+      <one-to-many class="TNoeProduct" />
+    </bag>
+    <bag name="TOrder" inverse="true">
+      <key column="Servicer_ID" />
+      <one-to-many class="TOrder" />
+    </bag>
+    <bag name="TPayForServicer" inverse="true">
+      <key column="Sericer_ID" />
+      <one-to-many class="TPayForServicer" />
+    </bag>
+    <bag name="TServicerForMahaleh" inverse="true">
+      <key column="Servicer_ID" />
+      <one-to-many class="TServicerForMahaleh" />
+    </bag>
+    <bag name="TTemporder" inverse="true">
+      <key column="Servicer_ID" />
+      <one-to-many class="TTemporder" />
+    </bag>
+    <bag name="TZarfiyatShiftPeyks" inverse="true">
+      <key column="Servicer_ID" />
+      <one-to-many class="TZarfiyatShiftPeyks" />
+    </bag>
+    <bag name="TZarfiyatShiftServicer" inverse="true">
+      <key column="Servicer_ID" />
+      <one-to-many class="TZarfiyatShiftServicer" />
+    </bag>
+  </class>
+</hibernate-mapping>

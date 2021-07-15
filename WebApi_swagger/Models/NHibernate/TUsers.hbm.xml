@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TUsers" table="T_Users"  lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdUsrer" column="ID_Usrer">
+      <generator class="native" />
+    </id>
+    <many-to-one name="TLaw">
+      <column name="Last_Law_Accepted_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <property name="NameFamily">
+      <column name="Name_Family" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="Tell">
+      <column name="Tell" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="IsDeleted">
+      <column name="Is_Deleted" sql-type="int" not-null="false" />
+    </property>
+    <property name="Activation">
+      <column name="Activation" sql-type="int" not-null="false" />
+    </property>
+    <property name="DeviceIdLogin">
+      <column name="Device_ID_login" sql-type="nvarchar" not-null="false" />
+    </property>
+    <bag name="TActivationCode" inverse="true">
+      <key column="User_ID" />
+      <one-to-many class="TActivationCode" />
+    </bag>
+    <bag name="TAddresses" inverse="true">
+      <key column="Users_ID" />
+      <one-to-many class="TAddresses" />
+    </bag>
+    <bag name="TNazaratForServicer" inverse="true">
+      <key column="Users_ID" />
+      <one-to-many class="TNazaratForServicer" />
+    </bag>
+    <bag name="TOrder" inverse="true">
+      <key column="Users_ID" />
+      <one-to-many class="TOrder" />
+    </bag>
+    <bag name="TTamasbama" inverse="true">
+      <key column="User_ID" />
+      <one-to-many class="TTamasbama" />
+    </bag>
+    <bag name="TTemporder" inverse="true">
+      <key column="User_ID" />
+      <one-to-many class="TTemporder" />
+    </bag>
+  </class>
+</hibernate-mapping>

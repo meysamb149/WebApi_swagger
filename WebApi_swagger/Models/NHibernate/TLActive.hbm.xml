@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TLActive" table="T_L_Active" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdActive" column="ID_Active">
+      <generator class="native" />
+    </id>
+    <property name="TitelsActive">
+      <column name="Titels_Active" sql-type="nvarchar" not-null="false" />
+    </property>
+    <bag name="TAddresses" inverse="true">
+      <key column="Active_ID" />
+      <one-to-many class="TAddresses" />
+    </bag>
+    <bag name="TCodeTakhfif" inverse="true">
+      <key column="Active_ID" />
+      <one-to-many class="TCodeTakhfif" />
+    </bag>
+    <bag name="TLCity" inverse="true">
+      <key column="Active_ID" />
+      <one-to-many class="TLCity" />
+    </bag>
+    <bag name="TLMahaleh" inverse="true">
+      <key column="Active_ID" />
+      <one-to-many class="TLMahaleh" />
+    </bag>
+    <bag name="TLOstan" inverse="true">
+      <key column="Active_ID" />
+      <one-to-many class="TLOstan" />
+    </bag>
+    <bag name="TNazaratForServicer" inverse="true">
+      <key column="Active_ID" />
+      <one-to-many class="TNazaratForServicer" />
+    </bag>
+    <bag name="TNoeProduct" inverse="true">
+      <key column="Active_ID" />
+      <one-to-many class="TNoeProduct" />
+    </bag>
+    <bag name="TPeyks" inverse="true">
+      <key column="Active_ID" />
+      <one-to-many class="TPeyks" />
+    </bag>
+    <bag name="TServicer" inverse="true">
+      <key column="Active_ID" />
+      <one-to-many class="TServicer" />
+    </bag>
+    <bag name="TServicerForMahaleh" inverse="true">
+      <key column="Active_ID" />
+      <one-to-many class="TServicerForMahaleh" />
+    </bag>
+    <bag name="TServicerForMahalehByPeyk" inverse="true">
+      <key column="Active_ID" />
+      <one-to-many class="TServicerForMahalehByPeyk" />
+    </bag>
+    <bag name="TShift" inverse="true">
+      <key column="Active_ID" />
+      <one-to-many class="TShift" />
+    </bag>
+  </class>
+</hibernate-mapping>

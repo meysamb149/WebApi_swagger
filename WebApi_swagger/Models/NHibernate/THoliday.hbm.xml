@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="THoliday" table="T_Holiday" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="HolidayId" column="Holiday_ID">
+      <generator class="native" />
+    </id>
+    <many-to-one name="TShift">
+      <column name="Holiday_Shift_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TServicer">
+      <column name="Holiday_Servicer_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <property name="HolidayDate">
+      <column name="Holiday_Date" sql-type="datetime" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

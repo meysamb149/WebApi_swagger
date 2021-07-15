@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TLVaziyatSabad" table="T_L_Vaziyat_Sabad" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdVaziyatSabad" column="ID_Vaziyat_Sabad">
+      <generator class="native" />
+    </id>
+    <property name="Titels">
+      <column name="Titels" sql-type="nvarchar" not-null="false" />
+    </property>
+    <bag name="TSabad" inverse="true">
+      <key column="Vaziyat_Sabad_ID" />
+      <one-to-many class="TSabad" />
+    </bag>
+    <bag name="TTemporder" inverse="true">
+      <key column="Vaziyat_Sabad_ID" />
+      <one-to-many class="TTemporder" />
+    </bag>
+  </class>
+</hibernate-mapping>

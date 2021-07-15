@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TAllQuestions" table="T_All_Questions"  lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdQuestions" column="ID_Questions">
+      <generator class="native" />
+    </id>
+    <property name="TitrQuestions">
+      <column name="Titr_Questions" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="TextQuestions">
+      <column name="Text_Questions" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="GroupId">
+      <column name="Group_ID" sql-type="int" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

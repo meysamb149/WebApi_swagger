@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TServicerForMahalehByPeyk" table="T_Servicer_For_Mahaleh_By_Peyk" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdServicerForMahalehByPeyk" column="ID_Servicer_For_Mahaleh_By_Peyk">
+      <generator class="native" />
+    </id>
+    <many-to-one name="TServicerForMahaleh">
+      <column name="Servicer_For_Mahaleh_ID" sql-type="bigint" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TPeyks">
+      <column name="Peyks_ID" sql-type="bigint" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TShift">
+      <column name="Shift_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TLActive">
+      <column name="Active_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <property name="OlaviatEntekhab">
+      <column name="Olaviat_Entekhab" sql-type="int" not-null="false" />
+    </property>
+    <property name="Countservice">
+      <column name="CountService" sql-type="int" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

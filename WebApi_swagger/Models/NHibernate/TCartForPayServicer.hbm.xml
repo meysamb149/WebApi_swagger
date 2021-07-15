@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TCartForPayServicer" table="T_Cart_For_Pay_Servicer" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdCartForPayServicer" column="ID_Cart_For_Pay_Servicer">
+      <generator class="native" />
+    </id>
+    <property name="ServicerId">
+      <column name="Servicer_ID" sql-type="int" not-null="false" />
+    </property>
+    <property name="NumberCart">
+      <column name="Number_Cart" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="ShabaCart">
+      <column name="Shaba_Cart" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="NumHesab">
+      <column name="Num_Hesab" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="NameBank">
+      <column name="Name_Bank" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="NameShobeh">
+      <column name="Name_Shobeh" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="NameMalekCart">
+      <column name="Name_Malek_Cart" sql-type="nvarchar" not-null="false" />
+    </property>
+    <bag name="TPayForServicer" inverse="true">
+      <key column="Cart_For_Pay_Servicer_ID" />
+      <one-to-many class="TPayForServicer" />
+    </bag>
+  </class>
+</hibernate-mapping>

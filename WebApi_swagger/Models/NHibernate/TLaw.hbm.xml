@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TLaw" table="T_Law" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdLaw" column="ID_Law">
+      <generator class="native" />
+    </id>
+    <many-to-one name="TUserRol">
+      <column name="User_Rol_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <property name="LawText">
+      <column name="Law_Text" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="LawDate">
+      <column name="Law_Date" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="LawType">
+      <column name="LawType" sql-type="nvarchar" not-null="false" />
+    </property>
+    <bag name="TPeyks" inverse="true">
+      <key column="Last_Law_Accepted_ID" />
+      <one-to-many class="TPeyks" />
+    </bag>
+    <bag name="TServicer" inverse="true">
+      <key column="Last_Law_Accepted_ID" />
+      <one-to-many class="TServicer" />
+    </bag>
+    <bag name="TUsers" inverse="true">
+      <key column="Last_Law_Accepted_ID" />
+      <one-to-many class="TUsers" />
+    </bag>
+  </class>
+</hibernate-mapping>
