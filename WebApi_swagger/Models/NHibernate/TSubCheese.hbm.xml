@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TSubCheese" table="T_Sub_Cheese"  lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdSubCheese" column="ID_Sub_Cheese">
+      <generator class="native" />
+    </id>
+    <many-to-one name="TLActive">
+      <column name="T_L_Active_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TServicer">
+      <column name="T_Servicer_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <property name="TitlesStr">
+      <column name="Titles_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="DescriptionStr">
+      <column name="Description_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="ImgUrlStr">
+      <column name="Img_Url_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="PriceInt">
+      <column name="Price_int" sql-type="int" not-null="false" />
+    </property>
+    <bag name="TSubTempSabadCheese" inverse="true">
+      <key column="T_Sub_Cheese_ID" />
+      <one-to-many class="TSubTempSabadCheese" />
+    </bag>
+  </class>
+</hibernate-mapping>

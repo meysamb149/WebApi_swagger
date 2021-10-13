@@ -26,22 +26,12 @@ namespace WebApi_swagger.Controllers
                 {
                     return Ok("کلید نادرست");
                 }
-                
-            //var ListApplicationVersion = session.Query<TApplicationVersion>()
-            //                          .Select(x => new
-            //                          {
-            //                              x.VersionId,
-            //                              VersionAppType = x.VersionAppType,
-            //                              VersionCode = x.VersionCode
-            //                          }).OrderByDescending(p => p.VersionId)
-            //                          .FirstOrDefault(s => s.VersionAppType == "moshtari");
-            //                          }).ToList();
 
-            var ListApplicationVersion = session.Query<TVersionApp>().Where(p => p.VersionAppType == "moshtari")
+            var ListApplicationVersion = session.Query<TVersionApp>().Where(p => p.Versionapptype == "moshtari")
                  .Select(x => new
                  {
                          x.IdVersionApp,
-                         VersionAppType = x.VersionAppType,
+                         VersionAppType = x.Versionapptype,
                          VersionCode = x.VersionCode,
                      TextForVersion = x.TextForVersion
                     
@@ -67,22 +57,13 @@ namespace WebApi_swagger.Controllers
             {
                 return Ok("کلید نادرست");
             }
-            //var ListApplicationVersion = session.Query<TApplicationVersion>()
-            //                          .Select(x => new
-            //                          {
-            //                              x.VersionId,
-            //                              VersionAppType = x.VersionAppType,
-            //                              VersionCode = x.VersionCode
-            //                          }).OrderByDescending(p => p.VersionId)
-            //                          .FirstOrDefault(s => s.VersionAppType == "moshtari");
-            //                          }).ToList();
 
-            var ListApplicationVersion = session.Query<TVersionApp>().Where(p => p.VersionAppType == "Serviser")
+            var ListApplicationVersion = session.Query<TVersionApp>().Where(p => p.Versionapptype == "Serviser")
                  .Select(x => new
                  {
                    
                          x.IdVersionApp,
-                         VersionAppType = x.VersionAppType,
+                         VersionAppType = x.Versionapptype,
                          VersionCode = x.VersionCode,
                      TextForVersion = x.TextForVersion
 

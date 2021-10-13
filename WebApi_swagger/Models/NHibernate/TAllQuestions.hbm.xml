@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
-  <class name="TAllQuestions" table="T_All_Questions"  lazy="true" dynamic-update="true" >
+  <class name="TAllQuestions" table="T_All_Questions" lazy="true" dynamic-update="true" >
     <cache usage="read-write"/>
     <id name="IdQuestions" column="ID_Questions">
       <generator class="native" />

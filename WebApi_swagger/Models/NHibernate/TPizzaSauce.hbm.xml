@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class  name="TPizzaSauce" table="T_Pizza_Sauce" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdPizzaSauce" column="ID_Pizza_Sauce">
+      <generator class="native" />
+    </id>
+    <many-to-one name="TLActive">
+      <column name="T_L_Active_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TServicer">
+      <column name="T_Servicer_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <property name="TitlesStr">
+      <column name="Titles_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="DescriptionStr">
+      <column name="Description_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="ImgUrlStr">
+      <column name="Img_Url_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="PriceForpizzaSize1Int">
+      <column name="Price_ForPizza_Size1_int" sql-type="int" not-null="false" />
+    </property>
+    <property name="PriceForpizzaSize2Int">
+      <column name="Price_ForPizza_Size2_int" sql-type="int" not-null="false" />
+    </property>
+    <property name="PriceForpizzaSize3Int">
+      <column name="Price_ForPizza_Size3_int" sql-type="int" not-null="false" />
+    </property>
+    <bag name="TPizzaTempSabadSauce" inverse="true">
+      <key column="T_Pizza_Sauce_ID" />
+      <one-to-many class="TPizzaTempSabadSauce" />
+    </bag>
+  </class>
+</hibernate-mapping>

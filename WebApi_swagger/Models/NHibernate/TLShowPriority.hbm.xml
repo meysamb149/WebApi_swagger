@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TLShowPriority" table="T_L_Show_Priority" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdShowPriority" column="ID_Show_Priority">
+      <generator class="native" />
+    </id>
+    <property name="TitlesShowPriorityStr">
+      <column name="Titles_Show_Priority_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <bag name="THomeProducts" inverse="true">
+      <key column="T_L_Show_Priority_ID" />
+      <one-to-many class="THomeProducts" />
+    </bag>
+  </class>
+</hibernate-mapping>

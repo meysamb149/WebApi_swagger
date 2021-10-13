@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="THomeProducts" table="T_Home_Products" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdHomeProductsInt" column="ID_Home_Products_int">
+      <generator class="native" />
+    </id>
+    <many-to-one name="TLShowPriority">
+      <column name="T_L_Show_Priority_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TLActive">
+      <column name="T_L_Active_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TServicer">
+      <column name="T_Servicer_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <property name="NameProductsStr">
+      <column name="Name_Products_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="PriceInt">
+      <column name="Price_int" sql-type="int" not-null="false" />
+    </property>
+    <property name="ImgUrlStr">
+      <column name="Img_Url_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="ImgRouteStr">
+      <column name="Img_Route_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="StartShowDt">
+      <column name="Start_Show_dt" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="EndShowDt">
+      <column name="End_Show_dt" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="ImgBanerStr">
+      <column name="Img_Baner_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <bag name="THomeProductsTempSabad" inverse="true">
+      <key column="T_Home_Products_ID" />
+      <one-to-many class="THomeProductsTempSabad" />
+    </bag>
+  </class>
+</hibernate-mapping>

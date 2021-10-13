@@ -9,52 +9,76 @@
       <column name="Titels_Active" sql-type="nvarchar" not-null="false" />
     </property>
     <bag name="TAddresses" inverse="true">
-      <key column="Active_ID" />
+      <key column="T_L_Active_ID" />
       <one-to-many class="TAddresses" />
     </bag>
-    <bag name="TCodeTakhfif" inverse="true">
+    <bag name="TCodeDiscount" inverse="true">
       <key column="Active_ID" />
-      <one-to-many class="TCodeTakhfif" />
+      <one-to-many class="TCodeDiscount" />
+    </bag>
+    <bag name="THomeApp" inverse="true">
+      <key column="T_L_Active_ID" />
+      <one-to-many class="THomeApp" />
+    </bag>
+    <bag name="THomeProducts" inverse="true">
+      <key column="T_L_Active_ID" />
+      <one-to-many class="THomeProducts" />
     </bag>
     <bag name="TLCity" inverse="true">
-      <key column="Active_ID" />
+      <key column="T_L_Active_ID" />
       <one-to-many class="TLCity" />
     </bag>
     <bag name="TLMahaleh" inverse="true">
-      <key column="Active_ID" />
+      <key column="T_L_Active_ID" />
       <one-to-many class="TLMahaleh" />
     </bag>
     <bag name="TLOstan" inverse="true">
-      <key column="Active_ID" />
+      <key column="T_L_Active_ID" />
       <one-to-many class="TLOstan" />
     </bag>
-    <bag name="TNazaratForServicer" inverse="true">
-      <key column="Active_ID" />
-      <one-to-many class="TNazaratForServicer" />
-    </bag>
-    <bag name="TNoeProduct" inverse="true">
-      <key column="Active_ID" />
-      <one-to-many class="TNoeProduct" />
-    </bag>
     <bag name="TPeyks" inverse="true">
-      <key column="Active_ID" />
+      <key column="T_L_Active_ID" />
       <one-to-many class="TPeyks" />
     </bag>
+    <bag name="TPizzaCheese" inverse="true">
+      <key column="T_L_Active_ID" />
+      <one-to-many class="TPizzaCheese" />
+    </bag>
+    <bag name="TPizzaCrust" inverse="true">
+      <key column="T_L_Active_ID" />
+      <one-to-many class="TPizzaCrust" />
+    </bag>
+    <bag name="TPizzaSauce" inverse="true">
+      <key column="T_L_Active_ID" />
+      <one-to-many class="TPizzaSauce" />
+    </bag>
+    <bag name="TPizzaSizeBread" inverse="true">
+      <key column="T_L_Active_ID" />
+      <one-to-many class="TPizzaSizeBread" />
+    </bag>
+    <bag name="TPizzaTopping" inverse="true">
+      <key column="T_L_Active_ID" />
+      <one-to-many class="TPizzaTopping" />
+    </bag>
     <bag name="TServicer" inverse="true">
-      <key column="Active_ID" />
+      <key column="T_L_Active_ID_int" />
       <one-to-many class="TServicer" />
     </bag>
-    <bag name="TServicerForMahaleh" inverse="true">
-      <key column="Active_ID" />
-      <one-to-many class="TServicerForMahaleh" />
+    <bag name="TSubCheese" inverse="true">
+      <key column="T_L_Active_ID" />
+      <one-to-many class="TSubCheese" />
     </bag>
-    <bag name="TServicerForMahalehByPeyk" inverse="true">
-      <key column="Active_ID" />
-      <one-to-many class="TServicerForMahalehByPeyk" />
+    <bag name="TSubSizeBread" inverse="true">
+      <key column="T_L_Active_ID" />
+      <one-to-many class="TSubSizeBread" />
     </bag>
-    <bag name="TShift" inverse="true">
-      <key column="Active_ID" />
-      <one-to-many class="TShift" />
+    <bag name="TSubTopping" inverse="true">
+      <key column="T_L_Active_ID" />
+      <one-to-many class="TSubTopping" />
+    </bag>
+    <bag name="TSubTypeBread" inverse="true">
+      <key column="T_L_Active_ID" />
+      <one-to-many class="TSubTypeBread" />
     </bag>
   </class>
 </hibernate-mapping>

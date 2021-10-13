@@ -5,68 +5,48 @@
     <id name="IdPeyks" column="ID_Peyks">
       <generator class="native" />
     </id>
-    <many-to-one name="TLNoeVasileh">
-      <column name="Noe_Vasileh_ID" sql-type="int" not-null="false" />
+    <many-to-one name="TServicer">
+      <column name="T_Servicer_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TLTransport">
+      <column name="T_L_Transport_ID" sql-type="int" not-null="false" />
     </many-to-one>
     <many-to-one name="TLActive">
-      <column name="Active_ID" sql-type="int" not-null="false" />
+      <column name="T_L_Active_ID" sql-type="int" not-null="false" />
     </many-to-one>
-    <many-to-one name="TLaw">
+    <property name="NameFamilyStr">
+      <column name="Name_Family_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="NumPelakTransportStr">
+      <column name="Num_Pelak_Transport_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="ImgStr">
+      <column name="Img_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="CodeMaliStr">
+      <column name="Code_Mali_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="PhoneStr">
+      <column name="Phone_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="ActivationInt">
+      <column name="Activation_int" sql-type="int" not-null="false" />
+    </property>
+    <property name="DeviceIdLoginStr">
+      <column name="Device_ID_login_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="LastLawAcceptedId">
       <column name="Last_Law_Accepted_ID" sql-type="int" not-null="false" />
-    </many-to-one>
-    <property name="ServicerId">
-      <column name="Servicer_ID" sql-type="int" not-null="false" />
     </property>
-    <property name="NameFamily">
-      <column name="Name_Family" sql-type="nvarchar" not-null="false" />
+    <property name="IsDeletedInt">
+      <column name="Is_Deleted_int" sql-type="int" not-null="false" />
     </property>
-    <property name="NumPelakVasileh">
-      <column name="Num_Pelak_Vasileh" sql-type="nvarchar" not-null="false" />
-    </property>
-    <property name="Img">
-      <column name="Img" sql-type="nvarchar" not-null="false" />
-    </property>
-    <property name="CodeMali">
-      <column name="Code_Mali" sql-type="nvarchar" not-null="false" />
-    </property>
-    <property name="Phone">
-      <column name="Phone" sql-type="nvarchar" not-null="false" />
-    </property>
-    <property name="Activation">
-      <column name="Activation" sql-type="int" not-null="false" />
-    </property>
-    <property name="DeviceIdLogin">
-      <column name="Device_ID_login" sql-type="nvarchar" not-null="false" />
-    </property>
-    <property name="IsDeleted">
-      <column name="Is_Deleted" sql-type="int" not-null="false" />
-    </property>
-    <property name="Pass">
-      <column name="Pass" sql-type="nvarchar" not-null="false" />
+    <property name="PassStr">
+      <column name="Pass_str" sql-type="nvarchar" not-null="false" />
     </property>
     <bag name="TActivationCode" inverse="true">
       <key column="Peyk_ID" />
       <one-to-many class="TActivationCode" />
-    </bag>
-    <bag name="TCGoZarfiyatShPeyks" inverse="true">
-      <key column="Peyks_ID" />
-      <one-to-many class="TCGoZarfiyatShPeyks" />
-    </bag>
-    <bag name="TOrder" inverse="true">
-      <key column="Peyk_ID" />
-      <one-to-many class="TOrder" />
-    </bag>
-    <bag name="TServicerForMahalehByPeyk" inverse="true">
-      <key column="Peyks_ID" />
-      <one-to-many class="TServicerForMahalehByPeyk" />
-    </bag>
-    <bag name="TTemporder" inverse="true">
-      <key column="Peyk_ID" />
-      <one-to-many class="TTemporder" />
-    </bag>
-    <bag name="TZarfiyatShiftPeyks" inverse="true">
-      <key column="Peyks_ID" />
-      <one-to-many class="TZarfiyatShiftPeyks" />
     </bag>
   </class>
 </hibernate-mapping>

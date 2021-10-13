@@ -361,20 +361,11 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Classes\PersianCulture.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AppServicesController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MenuUserController.cs" />
     <Compile Include="Controllers\Home\VersionHistory\NamespaceDoc.cs" />
     <Compile Include="Controllers\Home\VersionHistory\VersionHistoryController.cs" />
-    <Compile Include="Controllers\OrdersController.cs" />
-    <Compile Include="Controllers\TAddressesController.cs" />
     <Compile Include="Controllers\TLaw_MoshtariController.cs" />
-    <Compile Include="Controllers\TServicerController.cs" />
     <Compile Include="Controllers\TUsersController.cs" />
     <Compile Include="Controllers\TVersion_AppSController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Controllers\VerifyController.cs" />
     <Compile Include="Controllers\zarinpalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -387,42 +378,43 @@
     <Compile Include="Models\TActivationCode.cs" />
     <Compile Include="Models\TAddresses.cs" />
     <Compile Include="Models\TAllQuestions.cs" />
-    <Compile Include="Models\TCartForPayServicer.cs" />
-    <Compile Include="Models\TCGoZarfiyatShPeyks.cs" />
-    <Compile Include="Models\TCGoZarfiyatShServiser.cs" />
-    <Compile Include="Models\TCodeTakhfif.cs" />
-    <Compile Include="Models\TGroup.cs" />
-    <Compile Include="Models\TGroupProduct.cs" />
-    <Compile Include="Models\THoliday.cs" />
+    <Compile Include="Models\TCodeDiscount.cs" />
+    <Compile Include="Models\TContactus.cs" />
+    <Compile Include="Models\THomeApp.cs" />
+    <Compile Include="Models\THomeProducts.cs" />
+    <Compile Include="Models\THomeProductsTempSabad.cs" />
     <Compile Include="Models\TLActive.cs" />
     <Compile Include="Models\TLaw.cs" />
     <Compile Include="Models\TLCity.cs" />
     <Compile Include="Models\TLMahaleh.cs" />
-    <Compile Include="Models\TLNoeHPeyk.cs" />
     <Compile Include="Models\TLNoePay.cs" />
-    <Compile Include="Models\TLNoeVasileh.cs" />
     <Compile Include="Models\TLOstan.cs" />
+    <Compile Include="Models\TLPortionPizza.cs" />
+    <Compile Include="Models\TLShowPriority.cs" />
+    <Compile Include="Models\TLTransport.cs" />
     <Compile Include="Models\TLVaziyatSabad.cs" />
-    <Compile Include="Models\TLVaziyatTahvil.cs" />
     <Compile Include="Models\TLVaziyatVarizi.cs" />
-    <Compile Include="Models\TNazaratForServicer.cs" />
-    <Compile Include="Models\TNoeKhedmat.cs" />
-    <Compile Include="Models\TNoeProduct.cs" />
-    <Compile Include="Models\TOrder.cs" />
-    <Compile Include="Models\TPayForServicer.cs" />
     <Compile Include="Models\TPeyks.cs" />
-    <Compile Include="Models\TSabad.cs" />
+    <Compile Include="Models\TPizzaCheese.cs" />
+    <Compile Include="Models\TPizzaCrust.cs" />
+    <Compile Include="Models\TPizzaSauce.cs" />
+    <Compile Include="Models\TPizzaSizeBread.cs" />
+    <Compile Include="Models\TPizzaTempSabad.cs" />
+    <Compile Include="Models\TPizzaTempSabadCheese.cs" />
+    <Compile Include="Models\TPizzaTempSabadSauce.cs" />
+    <Compile Include="Models\TPizzaTempSabadTopping.cs" />
+    <Compile Include="Models\TPizzaTopping.cs" />
     <Compile Include="Models\TServicer.cs" />
-    <Compile Include="Models\TServicerForMahaleh.cs" />
-    <Compile Include="Models\TServicerForMahalehByPeyk.cs" />
-    <Compile Include="Models\TShift.cs" />
-    <Compile Include="Models\TTamasbama.cs" />
-    <Compile Include="Models\TTemporder.cs" />
-    <Compile Include="Models\TUserRol.cs" />
+    <Compile Include="Models\TSubCheese.cs" />
+    <Compile Include="Models\TSubSizeBread.cs" />
+    <Compile Include="Models\TSubTempSabad.cs" />
+    <Compile Include="Models\TSubTempSabadCheese.cs" />
+    <Compile Include="Models\TSubTempSabadTopping.cs" />
+    <Compile Include="Models\TSubTopping.cs" />
+    <Compile Include="Models\TSubTypeBread.cs" />
+    <Compile Include="Models\TTempOrder.cs" />
     <Compile Include="Models\TUsers.cs" />
     <Compile Include="Models\TVersionApp.cs" />
-    <Compile Include="Models\TZarfiyatShiftPeyks.cs" />
-    <Compile Include="Models\TZarfiyatShiftServicer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -453,7 +445,6 @@
     <Content Include="Models\NHibernate\nhibernate.configuration.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Models\NHibernate\TActivationCode.hbm.xml" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
     <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
@@ -484,62 +475,48 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="Models\NHibernate\TAddresses.hbm.xml">
+    <Content Include="Models\NHibernate\TActivationCode.hbm.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Models\NHibernate\TAllQuestions.hbm.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Models\NHibernate\TCartForPayServicer.hbm.xml" />
-    <Content Include="Models\NHibernate\TCGoZarfiyatShPeyks.hbm.xml" />
-    <Content Include="Models\NHibernate\TCGoZarfiyatShServiser.hbm.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Models\NHibernate\TCodeTakhfif.hbm.xml" />
-    <Content Include="Models\NHibernate\TGroup.hbm.xml" />
-    <Content Include="Models\NHibernate\TGroupProduct.hbm.xml" />
-    <Content Include="Models\NHibernate\THoliday.hbm.xml" />
+    <Content Include="Models\NHibernate\TAddresses.hbm.xml" />
+    <Content Include="Models\NHibernate\TAllQuestions.hbm.xml" />
+    <Content Include="Models\NHibernate\TCodeDiscount.hbm.xml" />
+    <Content Include="Models\NHibernate\TContactus.hbm.xml" />
+    <Content Include="Models\NHibernate\THomeApp.hbm.xml" />
+    <Content Include="Models\NHibernate\THomeProducts.hbm.xml" />
+    <Content Include="Models\NHibernate\THomeProductsTempSabad.hbm.xml" />
     <Content Include="Models\NHibernate\TLActive.hbm.xml" />
     <Content Include="Models\NHibernate\TLaw.hbm.xml" />
     <Content Include="Models\NHibernate\TLCity.hbm.xml" />
     <Content Include="Models\NHibernate\TLMahaleh.hbm.xml" />
-    <Content Include="Models\NHibernate\TLNoeHPeyk.hbm.xml" />
     <Content Include="Models\NHibernate\TLNoePay.hbm.xml" />
-    <Content Include="Models\NHibernate\TLNoeVasileh.hbm.xml" />
     <Content Include="Models\NHibernate\TLOstan.hbm.xml" />
+    <Content Include="Models\NHibernate\TLPortionPizza.hbm.xml" />
+    <Content Include="Models\NHibernate\TLShowPriority.hbm.xml" />
+    <Content Include="Models\NHibernate\TLTransport.hbm.xml" />
     <Content Include="Models\NHibernate\TLVaziyatSabad.hbm.xml" />
-    <Content Include="Models\NHibernate\TLVaziyatTahvil.hbm.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Models\NHibernate\TLVaziyatVarizi.hbm.xml" />
-    <Content Include="Models\NHibernate\TNazaratForServicer.hbm.xml" />
-    <Content Include="Models\NHibernate\TNoeKhedmat.hbm.xml" />
-    <Content Include="Models\NHibernate\TNoeProduct.hbm.xml" />
-    <Content Include="Models\NHibernate\TOrder.hbm.xml" />
-    <Content Include="Models\NHibernate\TPayForServicer.hbm.xml" />
     <Content Include="Models\NHibernate\TPeyks.hbm.xml" />
-    <Content Include="Models\NHibernate\TSabad.hbm.xml" />
-    <Content Include="Models\NHibernate\TServicer.hbm.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Models\NHibernate\TServicerForMahaleh.hbm.xml" />
-    <Content Include="Models\NHibernate\TServicerForMahalehByPeyk.hbm.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Models\NHibernate\TShift.hbm.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Models\NHibernate\TTamasbama.hbm.xml" />
-    <Content Include="Models\NHibernate\TTemporder.hbm.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Models\NHibernate\TUserRol.hbm.xml" />
+    <Content Include="Models\NHibernate\TPizzaCheese.hbm.xml" />
+    <Content Include="Models\NHibernate\TPizzaCrust.hbm.xml" />
+    <Content Include="Models\NHibernate\TPizzaSauce.hbm.xml" />
+    <Content Include="Models\NHibernate\TPizzaSizeBread.hbm.xml" />
+    <Content Include="Models\NHibernate\TPizzaTempSabad.hbm.xml" />
+    <Content Include="Models\NHibernate\TPizzaTempSabadCheese.hbm.xml" />
+    <Content Include="Models\NHibernate\TPizzaTempSabadSauce.hbm.xml" />
+    <Content Include="Models\NHibernate\TPizzaTempSabadTopping.hbm.xml" />
+    <Content Include="Models\NHibernate\TPizzaTopping.hbm.xml" />
+    <Content Include="Models\NHibernate\TServicer.hbm.xml" />
+    <Content Include="Models\NHibernate\TSubCheese.hbm.xml" />
+    <Content Include="Models\NHibernate\TSubSizeBread.hbm.xml" />
+    <Content Include="Models\NHibernate\TSubTempSabad.hbm.xml" />
+    <Content Include="Models\NHibernate\TSubTempSabadCheese.hbm.xml" />
+    <Content Include="Models\NHibernate\TSubTempSabadTopping.hbm.xml" />
+    <Content Include="Models\NHibernate\TSubTopping.hbm.xml" />
+    <Content Include="Models\NHibernate\TSubTypeBread.hbm.xml" />
+    <Content Include="Models\NHibernate\TTempOrder.hbm.xml" />
     <Content Include="Models\NHibernate\TUsers.hbm.xml" />
-    <Content Include="Models\NHibernate\TVersionApp.hbm.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Models\NHibernate\TZarfiyatShiftPeyks.hbm.xml" />
-    <Content Include="Models\NHibernate\TZarfiyatShiftServicer.hbm.xml" />
+    <Content Include="Models\NHibernate\TVersionApp.hbm.xml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />

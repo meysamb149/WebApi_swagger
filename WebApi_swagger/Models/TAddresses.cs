@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Text;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Text;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-
 namespace WebApi_swagger.Models
 {
-
-    public partial class TAddresses
+    public class TAddresses
     {
         public TAddresses()
         {
-            TOrder = new List<TOrder>();
-            TTemporder = new List<TTemporder>();
+            TTempOrder = new List<TTempOrder>();
         }
         public virtual long IdAddresses { get; set; }
         public virtual TUsers TUsers { get; set; }
@@ -22,15 +21,13 @@ namespace WebApi_swagger.Models
         public virtual TLOstan TLOstan { get; set; }
         public virtual TLActive TLActive { get; set; }
         [StringLength(100)]
-        public virtual string AddressName { get; set; }
-
-        public virtual string Titels_Address { get; set; }
-
-        public virtual decimal? Latitude { get; set; }
-        public virtual decimal? Longitude { get; set; }
-        public virtual string Phone_Addresss { get; set; }
+        public virtual string AddressNameStr { get; set; }
+        public virtual string TitelsAddressStr { get; set; }
+        public virtual decimal? LatitudeDec { get; set; }
+        public virtual decimal? LongitudeDec { get; set; }
+        [StringLength(13)]
+        public virtual string PhoneAddresssStr { get; set; }
         public virtual long? Lastorderid { get; set; }
-        public virtual IList<TOrder> TOrder { get; set; }
-        public virtual IList<TTemporder> TTemporder { get; set; }
+        public virtual IList<TTempOrder> TTempOrder { get; set; }
     }
 }

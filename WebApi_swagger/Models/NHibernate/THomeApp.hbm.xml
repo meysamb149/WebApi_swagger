@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="THomeApp" table="T_Home_App" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdHomeApp" column="ID_Home_App">
+      <generator class="native" />
+    </id>
+    <many-to-one name="TLActive">
+      <column name="T_L_Active_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TServicer">
+      <column name="T_Servicer_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <property name="BackgroundColorStr">
+      <column name="Background_Color_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="IconImgUrlStr">
+      <column name="Icon_Img_Url_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="TitlseStr">
+      <column name="Titlse_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="StartShowDt">
+      <column name="Start_Show_dt" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="EndShowDt">
+      <column name="End_Show_dt" sql-type="datetime" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

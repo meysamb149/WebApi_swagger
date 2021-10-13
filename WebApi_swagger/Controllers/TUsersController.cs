@@ -186,7 +186,7 @@ namespace WebApi_swagger.Controllers
 
             int _Is_Ins = 0;///اگر مساوی 1 شود کاربر میتواند کد درخواس بدهد
 
-            var _End_AcIdList = session.Query<TActivationCode>().Where(p => p.DeviceId == IsDevice_ID)
+            var _End_AcIdList = session.Query<TActivationCode>().Where(p => p.DeviceIdStr == IsDevice_ID)
                  .Select(x => new { x.IdActivationCode, x.CodeGenerationTime })
                  .OrderByDescending(x => x.IdActivationCode).Take(1).ToList();
             if (_End_AcIdList.Count != 0)
@@ -325,11 +325,11 @@ namespace WebApi_swagger.Controllers
                                 //tx.Commit();
 
                                 //var emp = session.Get<TActivationCode>(IsPhoneRegistered);
-                                var emp = session.QueryOver<TActivationCode>().Where(p => p.Tell == IsPhoneRegistered).SingleOrDefault();
-                                emp.Code = finalString;
-                                emp.DeviceId = IsDevice_ID;
+                                var emp = session.QueryOver<TActivationCode>().Where(p => p.TellStr == IsPhoneRegistered).SingleOrDefault();
+                                emp.CodeStr = finalString;
+                                emp.DeviceIdStr = IsDevice_ID;
                                 emp.CodeGenerationTime = Time_Now;
-                                emp.EnterCount = 0;
+                                emp.EnterCountInt = 0;
                                 emp.TUsers = session.QueryOver<TUsers>().Where(p => p.Tell == IsPhoneRegistered).SingleOrDefault();
                                 using (ITransaction transaction = session.BeginTransaction())
                                 {
@@ -488,10 +488,10 @@ namespace WebApi_swagger.Controllers
                             ////        //.SetDateTime()
                             ////        .ExecuteUpdate();
                             ////tx.Commit();
-                            var emp = session.QueryOver<TActivationCode>().Where(p => p.Tell == IsPhoneRegistered).SingleOrDefault();
-                            emp.Code = finalString;
+                            var emp = session.QueryOver<TActivationCode>().Where(p => p.TellStr == IsPhoneRegistered).SingleOrDefault();
+                            emp.CodeStr = finalString;
                             emp.CodeGenerationTime = Time_Now;
-                            emp.EnterCount = 0;
+                            emp.EnterCountInt = 0;
                             emp.TUsers = session.QueryOver<TUsers>().Where(p => p.Tell == IsPhoneRegistered).SingleOrDefault();
                             using (ITransaction transaction = session.BeginTransaction())
                             {
@@ -1205,7 +1205,7 @@ namespace WebApi_swagger.Controllers
             int _IsDeleted = 0;//اگر مساوی 0 باشد یعنی کاربر کدی درخواست نداده
             _UserId = session.QueryOver<TUsers>().Where(p => p.Tell == IsPhoneRegistered).Select(p => p.IdUsrer).SingleOrDefault<long>();
             _TActivationCodeId = session.QueryOver<TActivationCode>().Where(p => p.TUsers.IdUsrer == _UserId).Select(p => p.IdActivationCode).SingleOrDefault<long>();
-            _IsDevice_ID = session.QueryOver<TActivationCode>().Where(p => p.TUsers.IdUsrer == _UserId).Select(p => p.DeviceId).SingleOrDefault<string>();
+            _IsDevice_ID = session.QueryOver<TActivationCode>().Where(p => p.TUsers.IdUsrer == _UserId).Select(p => p.DeviceIdStr).SingleOrDefault<string>();
 
             if (_IsDevice_ID != IsDevice_ID)
             {
@@ -1233,9 +1233,9 @@ namespace WebApi_swagger.Controllers
             {
                 //_Activation = session.QueryOver<TUser>().Where(p => p.UserId == _UserId).Select(p => p.Activation).SingleOrDefault<int>();
                 _IsDeleted = session.QueryOver<TUsers>().Where(p => p.IdUsrer == _UserId).Select(p => p.IsDeleted).SingleOrDefault<int>();
-                _IsCode = session.QueryOver<TActivationCode>().Where(p => p.IdActivationCode == _TActivationCodeId).Select(p => p.Code).SingleOrDefault<string>();
+                _IsCode = session.QueryOver<TActivationCode>().Where(p => p.IdActivationCode == _TActivationCodeId).Select(p => p.CodeStr).SingleOrDefault<string>();
                 _IS_time = session.QueryOver<TActivationCode>().Where(p => p.IdActivationCode == _TActivationCodeId).Select(x => x.CodeGenerationTime).SingleOrDefault<DateTime>();
-                _EnterCount = session.QueryOver<TActivationCode>().Where(p => p.IdActivationCode == _TActivationCodeId).Select(x => x.EnterCount).SingleOrDefault<int>();
+                _EnterCount = session.QueryOver<TActivationCode>().Where(p => p.IdActivationCode == _TActivationCodeId).Select(x => x.EnterCountInt).SingleOrDefault<int>();
 
                 _IS_time_KH = session.QueryOver<TActivationCode>().Where(p => p.IdActivationCode == _TActivationCodeId).Select(x => x.IsDeletedTime).SingleOrDefault<DateTime>();
                 _Kh_LongTime = TimeAgo(_IS_time_KH);
@@ -1698,10 +1698,9 @@ namespace WebApi_swagger.Controllers
             }
             string IsDevice_ID = Unique_device_code;
             Int64 _End_AcId = 0;
-            var _End_AcIdList = session.Query<TActivationCode>().Where(p => p.DeviceId == IsDevice_ID)
+            var _End_AcIdList = session.Query<TActivationCode>().Where(p => p.DeviceIdStr == IsDevice_ID)
                  .Select(x => new { x.IdActivationCode })
                  .OrderByDescending(x => x.IdActivationCode).Take(1).ToList();
-            //_End_AcId = _End_AcIdList[0].AcId;
 
             if (_End_AcIdList.Count != 0)
             {
@@ -1713,7 +1712,6 @@ namespace WebApi_swagger.Controllers
                 Int64 _IsUserId = 0;
                 int _IsDeleted = 0;
                 string _LongTime_Khatakar = "0";
-                //_IsDeleted = session.QueryOver<TActivationCode>().Where(p => p.DeviceId == IsDevice_ID).Select(p => p.TUser.IsDeleted).SingleOrDefault<int>();
                 _IsUserId = session.QueryOver<TActivationCode>().Where(p => p.IdActivationCode == _End_AcId).Select(p => p.TUsers.IdUsrer).SingleOrDefault<Int64>();
                 _IsDeleted = session.QueryOver<TUsers>().Where(p => p.IdUsrer == _IsUserId).Select(p => p.IsDeleted).SingleOrDefault<int>();
                 DateTime _IS_time = session.QueryOver<TActivationCode>().Where(p => p.IdActivationCode == _End_AcId).Select(x => x.CodeGenerationTime).SingleOrDefault<DateTime>();
@@ -1941,8 +1939,6 @@ namespace WebApi_swagger.Controllers
             if (_UserId != 0)
             {
                 _Name_Family = session.QueryOver<TUsers>().Where(p => p.IdUsrer == _UserId).Select(p => p.NameFamily).SingleOrDefault<string>();
-                //if (_Name_Family=="0")
-                //{
                 ///آپدیت نام و نام خانوادگی
                 ITransaction tx_user = session.BeginTransaction();
                 string hqlVersionedUpdate_user = "update TUsers set Name_Family = :Name_Family2 , LastLawAccepted =:LastLawAccepted2 where UserId = :ID";
@@ -1955,12 +1951,6 @@ namespace WebApi_swagger.Controllers
                 tx_user.Commit();
                 session.Close();
                 return Ok("آپدیت شد");
-                //}
-                //else
-                //{
-                //    session.Close();
-                //    return Ok("اطلاعات نام و نام خانوادگی موجود است ورود به اکتیویتی نان");
-                //}
 
             }
             else
@@ -1994,16 +1984,16 @@ namespace WebApi_swagger.Controllers
                 {
                     Tell = IsPhoneRegistered,
                     Activation = 0,
-                    TLaw = null,
+                    LastLawAcceptedId = null,
                     NameFamily = "0"
                 };
                 TActivationCode ActivationCode = new TActivationCode
                 {
-                    Tell = IsPhoneRegistered,
-                    DeviceId = _Device_ID,
+                    TellStr = IsPhoneRegistered,
+                    DeviceIdStr = _Device_ID,
                     TUsers = User,///تو جاهایی که داریم جوین میکنیم باید یک ایست از او جدول وجود داشته باشد
                     CodeGenerationTime = Time_Now,
-                    Code = finalString
+                    CodeStr = finalString
                 };
 
                 ISession session = OpenNHibertnateSession.OpenSession();
@@ -2016,7 +2006,7 @@ namespace WebApi_swagger.Controllers
                         session.Save(ActivationCode);
                         transaction.Commit();
                     }
-                    //return Ok("ادامه مراحل ارسال پیامک");
+               
                     session.Close();
                     return String.Format(finalString);
                 }
@@ -2029,7 +2019,7 @@ namespace WebApi_swagger.Controllers
             {
                 ISession session = OpenNHibertnateSession.OpenSession();
                 long _Activation_Device_ID = 0;
-                _Activation_Device_ID = session.QueryOver<TActivationCode>().Where(p => p.DeviceId == _Device_ID).Select(p => p.IdActivationCode).SingleOrDefault<long>();
+                _Activation_Device_ID = session.QueryOver<TActivationCode>().Where(p => p.DeviceIdStr == _Device_ID).Select(p => p.IdActivationCode).SingleOrDefault<long>();
                 if (_Activation_Device_ID == 0)
                 {
                     TUsers TUserId = new TUsers
@@ -2038,11 +2028,11 @@ namespace WebApi_swagger.Controllers
                     };
                     TActivationCode ActivationCode = new TActivationCode
                     {
-                        Tell = IsPhoneRegistered,
-                        DeviceId = _Device_ID,
+                        TellStr = IsPhoneRegistered,
+                        DeviceIdStr = _Device_ID,
                         TUsers = TUserId,///تو جاهایی که داریم جوین میکنیم باید یک ایست از او جدول وجود داشته باشد
                         CodeGenerationTime = Time_Now,
-                        Code = finalString
+                        CodeStr = finalString
                     };
                     try
                     {
@@ -2067,10 +2057,10 @@ namespace WebApi_swagger.Controllers
                         IdUsrer = _UserId
                     };
                     var emp = session.Get<TActivationCode>(_Activation_Device_ID);
-                    emp.Tell = IsPhoneRegistered;
+                    emp.TellStr = IsPhoneRegistered;
                     emp.TUsers.IdUsrer = _UserId;
                     emp.CodeGenerationTime = Time_Now;
-                    emp.Code = finalString;
+                    emp.CodeStr = finalString;
                     using (ITransaction transaction = session.BeginTransaction())
                     {
                         session.Save(emp);

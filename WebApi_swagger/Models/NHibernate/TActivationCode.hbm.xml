@@ -14,20 +14,20 @@
     <many-to-one name="TServicer">
       <column name="Servicer_ID" sql-type="int" not-null="false" />
     </many-to-one>
-    <property name="Tell">
-      <column name="Tell" sql-type="nvarchar" not-null="false" />
+    <property name="TellStr">
+      <column name="Tell_str" sql-type="nvarchar" not-null="false" />
     </property>
-    <property name="DeviceId">
-      <column name="Device_ID" sql-type="nvarchar" not-null="false" />
+    <property name="DeviceIdStr">
+      <column name="Device_ID_str" sql-type="nvarchar" not-null="false" />
     </property>
-    <property name="Code">
-      <column name="Code" sql-type="nvarchar" not-null="false" />
+    <property name="CodeStr">
+      <column name="Code_str" sql-type="nvarchar" not-null="false" />
     </property>
     <property name="CodeGenerationTime">
       <column name="Code_Generation_Time" sql-type="datetime" not-null="false" />
     </property>
-    <property name="EnterCount">
-      <column name="Enter_Count" sql-type="int" not-null="false" />
+    <property name="EnterCountInt">
+      <column name="Enter_Count_int" sql-type="int" not-null="false" />
     </property>
     <property name="IsDeletedTime">
       <column name="Is_Deleted_Time" sql-type="datetime" not-null="false" />

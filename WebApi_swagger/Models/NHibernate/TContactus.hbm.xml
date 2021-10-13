@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TContactus" table="T_ContactUs" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdContactus" column="ID_ContactUs">
+      <generator class="native" />
+    </id>
+    <property name="UserId">
+      <column name="User_ID" sql-type="bigint" not-null="false" />
+    </property>
+    <property name="UserPhone">
+      <column name="User_Phone" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="UserText">
+      <column name="User_Text" sql-type="nvarchar" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

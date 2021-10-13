@@ -8,13 +8,9 @@
     <property name="Title">
       <column name="Title" sql-type="nvarchar" not-null="false" />
     </property>
-    <bag name="TOrder" inverse="true">
-      <key column="Noe_Pay_ID" />
-      <one-to-many class="TOrder" />
-    </bag>
-    <bag name="TTemporder" inverse="true">
-      <key column="Noe_Pay_ID" />
-      <one-to-many class="TTemporder" />
+    <bag name="TTempOrder" inverse="true">
+      <key column="T_L_Noe_Pay_ID" />
+      <one-to-many class="TTempOrder" />
     </bag>
   </class>
 </hibernate-mapping>

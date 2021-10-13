@@ -1,42 +1,33 @@
 ﻿using System;
-using System.Text;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Text;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-
 namespace WebApi_swagger.Models
 {
-
-    public partial class TTemporder
+    public class TTempOrder
     {
-        public TTemporder()
-        {
-            TSabad = new List<TSabad>();
-        }
-        public virtual long IDTemporder { get; set; }
-        public virtual TShift TShift { get; set; }
-        public virtual TLMahaleh TLMahaleh { get; set; }
-        public virtual TUsers TUsers { get; set; }
+        public virtual long TTempOrderId { get; set; }
         public virtual TAddresses TAddresses { get; set; }
-        public virtual TPeyks TPeyks { get; set; }
-        public virtual TServicer TServicer { get; set; }
         public virtual TLVaziyatVarizi TLVaziyatVarizi { get; set; }
         public virtual TLNoePay TLNoePay { get; set; }
         public virtual TLVaziyatSabad TLVaziyatSabad { get; set; }
-        public virtual TShift TShift2 { get; set; }
-        public virtual TCodeTakhfif TCodeTakhfif { get; set; }
-        public virtual DateTime TemporderDate { get; set; }
-        public virtual int? TemporderPrice { get; set; }
-        public virtual int? DayId { get; set; }
-        public virtual string Authority { get; set; }
-        public virtual DateTime? TemporderNow { get; set; }
-        public virtual int? TakhfifPardakhti { get; set; }
-        public virtual int? TemporderPriceBof { get; set; }
-        public virtual long? ShenaseSefaresh { get; set; }
-        public virtual int? PeykPrice { get; set; }
-        public virtual DateTime Datetahvil { get; set; }
-        public virtual int? MizanTakhfif { get; set; }
-        public virtual IList<TSabad> TSabad { get; set; }
+        public virtual TCodeDiscount TCodeDiscount { get; set; }
+        public virtual TUsers TUsers { get; set; }
+        public virtual TServicer TServicer { get; set; }
+        public virtual bool? IsTHomeProductsTempSabad { get; set; }
+        public virtual bool? IsTPizzaTempSabad { get; set; }
+        public virtual bool? IsTSubTempSabad { get; set; }
+        public virtual string AuthorityStr { get; set; }
+        public virtual int? AmountOfDiscountInt { get; set; }
+        [StringLength(50)]
+        public virtual string CodeDescountStr { get; set; }
+        public virtual int? TempOrderPriceBof { get; set; }
+        [StringLength(50)]
+        public virtual string ShenasehOrderStr { get; set; }
+        public virtual int? PriceAllInt { get; set; }
     }
 }

@@ -1,89 +1,97 @@
 ﻿using System;
-using System.Text;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Text;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-
 namespace WebApi_swagger.Models
 {
-
-    public partial class TServicer
+    public class TServicer
     {
         public TServicer()
         {
             TActivationCode = new List<TActivationCode>();
-            TCGoZarfiyatShServiser = new List<TCGoZarfiyatShServiser>();
-            TCodeTakhfif = new List<TCodeTakhfif>();
-            THoliday = new List<THoliday>();
-            TNazaratForServicer = new List<TNazaratForServicer>();
-            TNoeProduct = new List<TNoeProduct>();
-            TOrder = new List<TOrder>();
-            TPayForServicer = new List<TPayForServicer>();
-            TServicerForMahaleh = new List<TServicerForMahaleh>();
-            TTemporder = new List<TTemporder>();
-            TZarfiyatShiftPeyks = new List<TZarfiyatShiftPeyks>();
-            TZarfiyatShiftServicer = new List<TZarfiyatShiftServicer>();
+            TCodeDiscount = new List<TCodeDiscount>();
+            THomeApp = new List<THomeApp>();
+            THomeProducts = new List<THomeProducts>();
+            TPeyks = new List<TPeyks>();
+            TPizzaCheese = new List<TPizzaCheese>();
+            TPizzaCrust = new List<TPizzaCrust>();
+            TPizzaSauce = new List<TPizzaSauce>();
+            TPizzaSizeBread = new List<TPizzaSizeBread>();
+            TPizzaTempSabad = new List<TPizzaTempSabad>();
+            TPizzaTopping = new List<TPizzaTopping>();
+            TSubCheese = new List<TSubCheese>();
+            TSubSizeBread = new List<TSubSizeBread>();
+            TSubTopping = new List<TSubTopping>();
+            TSubTypeBread = new List<TSubTypeBread>();
+            TTempOrder = new List<TTempOrder>();
         }
         public virtual int IdServicer { get; set; }
         public virtual TLActive TLActive { get; set; }
-        public virtual TLaw TLaw { get; set; }
         [StringLength(70)]
-        public virtual string NameServicer { get; set; }
-        public virtual string Address { get; set; }
-        public virtual string Img { get; set; }
+        public virtual string NameServicerStr { get; set; }
+        public virtual string AddressStr { get; set; }
+        public virtual string ImgStr { get; set; }
         [StringLength(13)]
-        public virtual string Phone1 { get; set; }
+        public virtual string Phone1Str { get; set; }
         [StringLength(13)]
-        public virtual string Phone2 { get; set; }
+        public virtual string Phone2Str { get; set; }
         [StringLength(50)]
-        public virtual string NameFamilyAdminServicer { get; set; }
+        public virtual string NameFamilyAdminServicerStr { get; set; }
         [StringLength(13)]
-        public virtual string PhoneAdmin { get; set; }
+        public virtual string PhoneAdminStr { get; set; }
         [StringLength(10)]
-        public virtual string CodeMaliAdmin { get; set; }
+        public virtual string CodeMaliAdminStr { get; set; }
         [StringLength(20)]
-        public virtual string NumberGharardad { get; set; }
+        public virtual string NumberContractStr { get; set; }
         [StringLength(50)]
-        public virtual string NumberCartBank { get; set; }
+        public virtual string NumberCartBankStr { get; set; }
         [StringLength(50)]
-        public virtual string ShabaCartBank { get; set; }
+        public virtual string ShabaCartBankStr { get; set; }
         [StringLength(50)]
-        public virtual string NameBank { get; set; }
+        public virtual string NameBankStr { get; set; }
         [StringLength(50)]
-        public virtual string UsernameCartBank { get; set; }
-        public virtual decimal? Latitude { get; set; }
-        public virtual decimal? Longitude { get; set; }
-        public virtual int? AvgRank { get; set; }
-        public virtual int? OstanId { get; set; }
-        public virtual int? CityId { get; set; }
-        public virtual int? CNazarat { get; set; }
-        public virtual int? Activation { get; set; }
+        public virtual string UsernameCartBankStr { get; set; }
+        public virtual decimal? LatitudeDec { get; set; }
+        public virtual decimal? LongitudeDec { get; set; }
+        public virtual int? AvgRankInt { get; set; }
+        public virtual int? OstanIdInt { get; set; }
+        public virtual int? CityIdInt { get; set; }
+        public virtual int? CCommentsInt { get; set; }
+        public virtual int? ActivationInt { get; set; }
         [StringLength(50)]
-        public virtual string DeviceIdLogin { get; set; }
-        public virtual int? IsDeleted { get; set; }
+        public virtual string DeviceIdLoginStr { get; set; }
+        public virtual int? LastLawAcceptedId { get; set; }
+        public virtual int? IsDeletedInt { get; set; }
         [StringLength(50)]
-        public virtual string Pass { get; set; }
+        public virtual string PassStr { get; set; }
         [StringLength(50)]
-        public virtual string Telegram { get; set; }
+        public virtual string TelegramStr { get; set; }
         [StringLength(50)]
-        public virtual string Instagram { get; set; }
+        public virtual string InstagramStr { get; set; }
         [StringLength(50)]
-        public virtual string Whatsapp { get; set; }
+        public virtual string WhatsappStr { get; set; }
         [StringLength(50)]
-        public virtual string OtherPage { get; set; }
-        public virtual string TozihatKhedmat { get; set; }
+        public virtual string OtherPageStr { get; set; }
+        public virtual string DescriptionServiceStr { get; set; }
         public virtual IList<TActivationCode> TActivationCode { get; set; }
-        public virtual IList<TCGoZarfiyatShServiser> TCGoZarfiyatShServiser { get; set; }
-        public virtual IList<TCodeTakhfif> TCodeTakhfif { get; set; }
-        public virtual IList<THoliday> THoliday { get; set; }
-        public virtual IList<TNazaratForServicer> TNazaratForServicer { get; set; }
-        public virtual IList<TNoeProduct> TNoeProduct { get; set; }
-        public virtual IList<TOrder> TOrder { get; set; }
-        public virtual IList<TPayForServicer> TPayForServicer { get; set; }
-        public virtual IList<TServicerForMahaleh> TServicerForMahaleh { get; set; }
-        public virtual IList<TTemporder> TTemporder { get; set; }
-        public virtual IList<TZarfiyatShiftPeyks> TZarfiyatShiftPeyks { get; set; }
-        public virtual IList<TZarfiyatShiftServicer> TZarfiyatShiftServicer { get; set; }
+        public virtual IList<TCodeDiscount> TCodeDiscount { get; set; }
+        public virtual IList<THomeApp> THomeApp { get; set; }
+        public virtual IList<THomeProducts> THomeProducts { get; set; }
+        public virtual IList<TPeyks> TPeyks { get; set; }
+        public virtual IList<TPizzaCheese> TPizzaCheese { get; set; }
+        public virtual IList<TPizzaCrust> TPizzaCrust { get; set; }
+        public virtual IList<TPizzaSauce> TPizzaSauce { get; set; }
+        public virtual IList<TPizzaSizeBread> TPizzaSizeBread { get; set; }
+        public virtual IList<TPizzaTempSabad> TPizzaTempSabad { get; set; }
+        public virtual IList<TPizzaTopping> TPizzaTopping { get; set; }
+        public virtual IList<TSubCheese> TSubCheese { get; set; }
+        public virtual IList<TSubSizeBread> TSubSizeBread { get; set; }
+        public virtual IList<TSubTopping> TSubTopping { get; set; }
+        public virtual IList<TSubTypeBread> TSubTypeBread { get; set; }
+        public virtual IList<TTempOrder> TTempOrder { get; set; }
     }
 }

@@ -6,45 +6,41 @@
       <generator class="native" />
     </id>
     <many-to-one name="TUsers">
-      <column name="Users_ID" sql-type="bigint" not-null="false" />
+      <column name="T_L_Users_ID" sql-type="bigint" not-null="false" />
     </many-to-one>
     <many-to-one name="TLMahaleh">
-      <column name="Mahaleh_ID" sql-type="int" not-null="false" />
+      <column name="T_L_Mahaleh_ID" sql-type="int" not-null="false" />
     </many-to-one>
     <many-to-one name="TLCity">
-      <column name="City_ID" sql-type="int" not-null="false" />
+      <column name="T_L_City_ID" sql-type="int" not-null="false" />
     </many-to-one>
     <many-to-one name="TLOstan">
-      <column name="Ostan_ID" sql-type="int" not-null="false" />
+      <column name="T_L_Ostan_ID" sql-type="int" not-null="false" />
     </many-to-one>
     <many-to-one name="TLActive">
-      <column name="Active_ID" sql-type="int" not-null="false" />
+      <column name="T_L_Active_ID" sql-type="int" not-null="false" />
     </many-to-one>
-    <property name="AddressName">
-      <column name="Address_Name" sql-type="nvarchar" not-null="false" />
+    <property name="AddressNameStr">
+      <column name="Address_Name_str" sql-type="nvarchar" not-null="false" />
     </property>
-    <property name="Titels_Address">
-      <column name="Titels_Address" sql-type="nvarchar" not-null="false" />
+    <property name="TitelsAddressStr">
+      <column name="Titels_Address_str" sql-type="nvarchar" not-null="false" />
     </property>
-    <property name="Latitude">
-      <column name="Latitude" sql-type="decimal" not-null="false" />
+    <property name="LatitudeDec">
+      <column name="Latitude_dec" sql-type="decimal" not-null="false" />
     </property>
-    <property name="Longitude">
-      <column name="Longitude" sql-type="decimal" not-null="false" />
+    <property name="LongitudeDec">
+      <column name="Longitude_dec" sql-type="decimal" not-null="false" />
     </property>
-    <property name="Phone_Addresss">
-      <column name="Phone_Addresss" sql-type="nvarchar" not-null="false" />
+    <property name="PhoneAddresssStr">
+      <column name="Phone_Addresss_str" sql-type="nvarchar" not-null="false" />
     </property>
     <property name="Lastorderid">
       <column name="LastOrderID" sql-type="bigint" not-null="false" />
     </property>
-    <bag name="TOrder" inverse="true">
-      <key column="Address_ID" />
-      <one-to-many class="TOrder" />
-    </bag>
-    <bag name="TTemporder" inverse="true">
-      <key column="Address_ID" />
-      <one-to-many class="TTemporder" />
+    <bag name="TTempOrder" inverse="true">
+      <key column="T_Addresses_ID" />
+      <one-to-many class="TTempOrder" />
     </bag>
   </class>
 </hibernate-mapping>

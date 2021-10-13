@@ -16,13 +16,10 @@ namespace WebApi_swagger.Controllers
 {
     public class TLaw_MoshtariController : ApiController
     {
-        //ISession session = OpenNHibertnateSession.OpenSession();
-        //Get All Employee 
         [HttpGet]
         [Route("api/G1/GetListTLaw_Moshtari/{Unique_code}")]
         public IHttpActionResult GetListTLaw_Moshtari(string Unique_code)
         {
-            //var result = Regex.Replace("{\"MyCustomName\":[{\"LawId\":2,\"LawText\":\"58\"}]}", @"{\\", @"");
             if (Unique_code != "PlatformV199325694")
             {
 
@@ -32,51 +29,20 @@ namespace WebApi_swagger.Controllers
 
             int maxOrder = session.Query<TLaw>().Max(x => x.IdLaw);
             var ListApplicationVersion = session.Query<TLaw>()
-                                         .Where(p =>  p.LawType== "moshtari")
+                                         .Where(p =>  p.LawtypeStr== "moshtari")
                                          .Select(x =>
            new {
-
-                //LawMoshtari = new
-                //{
                     LawId = x.IdLaw,
-                    LawText = x.LawText
-                //}
+                    LawText = x.LawTextStr
             }).OrderByDescending(a => a.LawId).Take(1); ;
-                                         //.Select(x => new
-                                         //{
-                                         //    LawId = x.IdLaw,
-                                         //    LawText = x.LawText
-                                         //});
+                                         
             var ListApplicationVersion2 = ListApplicationVersion.ToList();
             var json = JsonConvert.SerializeObject(new
             {
                 MyLaw = ListApplicationVersion2
             });
 
-            //var json23 = JsonSerializer.Serialize(ListApplicationVersion2);
-            //var json24 = JsonConvert.SerializeObject(ListApplicationVersion2);
-            //string formatjson = Regex.Replace(@json, @"T:\\", @"");
-
-            //string[] a = new[] { "1", "2", "3" };
-            //Product product = new Product
-            //{
-            //    Name = "Apple",
-            //    Expiry = new DateTime(2008, 12, 28),
-            //    Price = 3.99M,
-
-            //    //a.CopyTo(b, 0);
-            //    Sizes = a
-            //};
-            //string json = JsonConvert.SerializeObject(product, Formatting.Indented);
-
-            //var list = new List<string> { "foo", "bar" };
-
-            //var tags = new { tags = list };
-
             JObject json5 = JObject.Parse(json);
-
-            //Console.WriteLine(JsonConvert.SerializeObject(tags));
-
             session.Close();
             return Ok(json5);
         }
@@ -94,15 +60,11 @@ namespace WebApi_swagger.Controllers
 
             int maxOrder = session.Query<TLaw>().Max(x => x.IdLaw);
             var ListApplicationVersion = session.Query<TLaw>()
-                                         .Where(p =>  p.LawType == "Serviser")
+                                         .Where(p =>  p.LawtypeStr == "Serviser")
                                          .Select(x =>
            new {
-
-               //LawMoshtari = new
-               //{
                LawId = x.IdLaw,
-               LawText = x.LawText
-               //}
+               LawText = x.LawTextStr
            }).OrderByDescending(a=>a.LawId).Take(1);
             var ListApplicationVersion2 = ListApplicationVersion.ToList();
             var json = JsonConvert.SerializeObject(new
@@ -110,23 +72,10 @@ namespace WebApi_swagger.Controllers
                 MyLaw = ListApplicationVersion2
             });
 
-        
-
             JObject json5 = JObject.Parse(json);
-
-            //Console.WriteLine(JsonConvert.SerializeObject(tags));
-
             session.Close();
             return Ok(json5);
         }
-
-        //internal class Product
-        //{
-        //    public string[] Sizes { get; set; }
-        //    public decimal Price { get; set; }
-        //    public DateTime Expiry { get; set; }
-        //    public string Name { get; set; }
-        //}
 
 
         [HttpPost]
@@ -155,9 +104,9 @@ namespace WebApi_swagger.Controllers
                 IdUsrer = _UserID
             };
 
-            TTamasbama tTamasbama = new TTamasbama
+            TContactus tContactus = new TContactus
             {
-                TUsers = UserId,///تو جاهایی که داریم جوین میکنیم باید یک ایست از او جدول وجود داشته باشد
+                UserId = _UserID,///تو جاهایی که داریم جوین میکنیم باید یک ایست از او جدول وجود داشته باشد
                 UserPhone = Phone,
                 UserText = User_Text
             };
@@ -166,7 +115,7 @@ namespace WebApi_swagger.Controllers
 
                 using (ITransaction transaction = session.BeginTransaction())
                 {
-                    session.Save(tTamasbama);
+                    session.Save(tContactus);
                     transaction.Commit();
                 }
                 session.Close();

@@ -9,11 +9,11 @@
     </property>
     <property name="connection.connection_string">
       <!--Server=STATISTIC;database=DB_PeykeNan;Integrated Security=SSPI;-->
-       <!--Server=DESKTOP-PTJRPE1;database=DB_Pelatform;User ID=sa;Password=123;-->
+      Server=DESKTOP-PTJRPE1;database=DB_Epitza;User ID=sa;Password=123;
 
 
       <!--Server=185.55.224.13;Database=abfaabya_Pelatform;User ID=abfaabya_sa3;Password=Rtcl43$1;-->
-      Server=46.4.37.226\MSSQLSERVER2016,51016;Database=setapiir_Helkoo;User ID=meysambagheri149_4wl81v1z;Password=6~Puev91;
+      <!--Server=46.4.37.226\MSSQLSERVER2016,51016;Database=setapiir_Helkoo;User ID=meysambagheri149_4wl81v1z;Password=6~Puev91;-->
     </property>
     <property name="dialect">
       NHibernate.Dialect.MsSql2012Dialect

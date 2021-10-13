@@ -1,79 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
-  <class name="TTemporder" table="T_TempOrder" lazy="true" dynamic-update="true" >
+  <class name="TTempOrder" table="T_Temp_Order" lazy="true" dynamic-update="true" >
     <cache usage="read-write"/>
-    <id name="IDTemporder" column="ID_TempOrder">
+    <id name="TTempOrderId" column="T_Temp_Order_ID">
       <generator class="native" />
     </id>
-    <many-to-one name="TShift">
-      <column name="Shift_ID" sql-type="int" not-null="false" />
-    </many-to-one>
-    <many-to-one name="TLMahaleh">
-      <column name="Mahaleh_ID" sql-type="int" not-null="false" />
-    </many-to-one>
-    <many-to-one name="TUsers">
-      <column name="User_ID" sql-type="bigint" not-null="false" />
-    </many-to-one>
     <many-to-one name="TAddresses">
-      <column name="Address_ID" sql-type="bigint" not-null="false" />
-    </many-to-one>
-    <many-to-one name="TPeyks">
-      <column name="Peyk_ID" sql-type="bigint" not-null="false" />
-    </many-to-one>
-    <many-to-one name="TServicer">
-      <column name="Servicer_ID" sql-type="int" not-null="false" />
+      <column name="T_Addresses_ID" sql-type="bigint" not-null="false" />
     </many-to-one>
     <many-to-one name="TLVaziyatVarizi">
-      <column name="Vaziat_Varizi_ID" sql-type="int" not-null="false" />
+      <column name="T_L_Vaziyat_Varizi_ID" sql-type="int" not-null="false" />
     </many-to-one>
     <many-to-one name="TLNoePay">
-      <column name="Noe_Pay_ID" sql-type="int" not-null="false" />
+      <column name="T_L_Noe_Pay_ID" sql-type="int" not-null="false" />
     </many-to-one>
     <many-to-one name="TLVaziyatSabad">
-      <column name="Vaziyat_Sabad_ID" sql-type="int" not-null="false" />
+      <column name="T_L_Vaziyat_Sabad_ID" sql-type="int" not-null="false" />
     </many-to-one>
-    <many-to-one name="TShift2">
-      <column name="Shift_IDTahvil" sql-type="int" not-null="false" />
+    <many-to-one name="TCodeDiscount">
+      <column name="T_Code_Discount_ID" sql-type="int" not-null="false" />
     </many-to-one>
-    <many-to-one name="TCodeTakhfif">
-      <column name="Code_Takhfif_ID" sql-type="int" not-null="false" />
+    <many-to-one name="TUsers">
+      <column name="T_Users_ID" sql-type="bigint" not-null="false" />
     </many-to-one>
-    <property name="TemporderDate">
-      <column name="TempOrder_Date" sql-type="datetime" not-null="false" />
+    <many-to-one name="TServicer">
+      <column name="T_Servicer_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <property name="IsTHomeProductsTempSabad">
+      <column name="IS_T_Home_Products_Temp_Sabad" sql-type="bit" not-null="false" />
     </property>
-    <property name="TemporderPrice">
-      <column name="TempOrder_Price" sql-type="int" not-null="false" />
+    <property name="IsTPizzaTempSabad">
+      <column name="IS_T_Pizza_Temp_Sabad" sql-type="bit" not-null="false" />
     </property>
-    <property name="DayId">
-      <column name="Day_ID" sql-type="int" not-null="false" />
+    <property name="IsTSubTempSabad">
+      <column name="IS_T_Sub_Temp_Sabad" sql-type="bit" not-null="false" />
     </property>
-    <property name="Authority">
-      <column name="Authority" sql-type="nvarchar" not-null="false" />
+    <property name="AuthorityStr">
+      <column name="Authority_str" sql-type="nvarchar" not-null="false" />
     </property>
-    <property name="TemporderNow">
-      <column name="TempOrder_Now" sql-type="datetime" not-null="false" />
+    <property name="AmountOfDiscountInt">
+      <column name="Amount_Of_Discount_int" sql-type="int" not-null="false" />
     </property>
-    <property name="TakhfifPardakhti">
-      <column name="Takhfif_Pardakhti" sql-type="int" not-null="false" />
+    <property name="CodeDescountStr">
+      <column name="Code_Descount_str" sql-type="nvarchar" not-null="false" />
     </property>
-    <property name="TemporderPriceBof">
-      <column name="TempOrder_Price_BOf" sql-type="int" not-null="false" />
+    <property name="TempOrderPriceBof">
+      <column name="Temp_Order_Price_BOF" sql-type="int" not-null="false" />
     </property>
-    <property name="ShenaseSefaresh">
-      <column name="Shenase_Sefaresh" sql-type="bigint" not-null="false" />
+    <property name="ShenasehOrderStr">
+      <column name="Shenaseh_Order_str" sql-type="nvarchar" not-null="false" />
     </property>
-    <property name="PeykPrice">
-      <column name="Peyk_Price" sql-type="int" not-null="false" />
+    <property name="PriceAllInt">
+      <column name="Price_All_int" sql-type="int" not-null="false" />
     </property>
-    <property name="Datetahvil">
-      <column name="Datetahvil" sql-type="datetime" not-null="false" />
-    </property>
-    <property name="MizanTakhfif">
-      <column name="Mizan_Takhfif" sql-type="int" not-null="false" />
-    </property>
-    <bag name="TSabad" inverse="true">
-      <key column="T_TempOrder_ID" />
-      <one-to-many class="TSabad" />
-    </bag>
   </class>
 </hibernate-mapping>

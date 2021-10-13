@@ -17,7 +17,7 @@
     <property name="UserId">
       <column name="User_ID" sql-type="nvarchar" not-null="false" />
     </property>
-    <property name="VersionAppType">
+    <property name="Versionapptype">
       <column name="VersionAppType" sql-type="nvarchar" not-null="false" />
     </property>
   </class>

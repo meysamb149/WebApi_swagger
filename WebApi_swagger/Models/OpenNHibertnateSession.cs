@@ -25,25 +25,25 @@ namespace WebApi_swagger.Models
               (@"~\Models\NHibernate\TAddresses.hbm.xml");
             configuration.AddFile(TAddressesConfigurationFile);
 
-            var TCartForPayServicerConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TCartForPayServicer.hbm.xml");
-            configuration.AddFile(TCartForPayServicerConfigurationFile);
+            var TCodeDiscountConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\TCodeDiscount.hbm.xml");
+            configuration.AddFile(TCodeDiscountConfigurationFile);
 
-            var TGroupConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TGroup.hbm.xml");
-            configuration.AddFile(TGroupConfigurationFile);
+            var THomeAppConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\THomeApp.hbm.xml");
+            configuration.AddFile(THomeAppConfigurationFile);
 
-            var TGroupProductConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TGroupProduct.hbm.xml");
-            configuration.AddFile(TGroupProductConfigurationFile);
+            var THomeProductsConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\THomeProducts.hbm.xml");
+            configuration.AddFile(THomeProductsConfigurationFile);
+
+            var THomeProductsTempSabadConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\THomeProductsTempSabad.hbm.xml");
+            configuration.AddFile(THomeProductsTempSabadConfigurationFile);
 
             var TLActiveConfigurationFile = HttpContext.Current.Server.MapPath
               (@"~\Models\NHibernate\TLActive.hbm.xml");
             configuration.AddFile(TLActiveConfigurationFile);
-
-            var TLawConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TLaw.hbm.xml");
-            configuration.AddFile(TLawConfigurationFile);
 
             var TLCityConfigurationFile = HttpContext.Current.Server.MapPath
               (@"~\Models\NHibernate\TLCity.hbm.xml");
@@ -53,127 +53,128 @@ namespace WebApi_swagger.Models
               (@"~\Models\NHibernate\TLMahaleh.hbm.xml");
             configuration.AddFile(TLMahalehConfigurationFile);
 
-            var TLNoeHPeykConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TLNoeHPeyk.hbm.xml");
-            configuration.AddFile(TLNoeHPeykConfigurationFile);
-
-            var TLNoeVasilehConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TLNoeVasileh.hbm.xml");
-            configuration.AddFile(TLNoeVasilehConfigurationFile);
+            var TLNoePayConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\TLNoePay.hbm.xml");
+            configuration.AddFile(TLNoePayConfigurationFile);
 
             var TLOstanConfigurationFile = HttpContext.Current.Server.MapPath
               (@"~\Models\NHibernate\TLOstan.hbm.xml");
             configuration.AddFile(TLOstanConfigurationFile);
 
+            var TLPortionPizzaConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\TLPortionPizza.hbm.xml");
+            configuration.AddFile(TLPortionPizzaConfigurationFile);
+
+
+            var TLShowPriorityConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\TLShowPriority.hbm.xml");
+            configuration.AddFile(TLShowPriorityConfigurationFile);
+
+            var TLTransportConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\TLTransport.hbm.xml");
+            configuration.AddFile(TLTransportConfigurationFile);
+
+            var TLVaziyatSabadConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\TLVaziyatSabad.hbm.xml");
+            configuration.AddFile(TLVaziyatSabadConfigurationFile);
 
             var TLVaziyatVariziConfigurationFile = HttpContext.Current.Server.MapPath
               (@"~\Models\NHibernate\TLVaziyatVarizi.hbm.xml");
             configuration.AddFile(TLVaziyatVariziConfigurationFile);
 
-            var TNazaratForServicerConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TNazaratForServicer.hbm.xml");
-            configuration.AddFile(TNazaratForServicerConfigurationFile);
-
-            var TNoeKhedmatConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TNoeKhedmat.hbm.xml");
-            configuration.AddFile(TNoeKhedmatConfigurationFile);
-
-            var TNoeProductConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TNoeProduct.hbm.xml");
-            configuration.AddFile(TNoeProductConfigurationFile);
-
-            var TPayForServicerConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TPayForServicer.hbm.xml");
-            configuration.AddFile(TPayForServicerConfigurationFile);
-
             var TPeyksConfigurationFile = HttpContext.Current.Server.MapPath
               (@"~\Models\NHibernate\TPeyks.hbm.xml");
             configuration.AddFile(TPeyksConfigurationFile);
 
+            var TPizzaCheeseConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\TPizzaCheese.hbm.xml");
+            configuration.AddFile(TPizzaCheeseConfigurationFile);
+
+            var TPizzaCrustConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\TPizzaCrust.hbm.xml");
+            configuration.AddFile(TPizzaCrustConfigurationFile);
+
+            var TPizzaSauceConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\TPizzaSauce.hbm.xml");
+            configuration.AddFile(TPizzaSauceConfigurationFile);
+
+            var TPizzaSizeBreadConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\TPizzaSizeBread.hbm.xml");
+            configuration.AddFile(TPizzaSizeBreadConfigurationFile);
+
+            var TPizzaTempSabadConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\TPizzaTempSabad.hbm.xml");
+            configuration.AddFile(TPizzaTempSabadConfigurationFile);
+
+            var TPizzaTempSabadCheeseConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\TPizzaTempSabadCheese.hbm.xml");
+            configuration.AddFile(TPizzaTempSabadCheeseConfigurationFile);
+
+            var TPizzaTempSabadSauceConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\TPizzaTempSabadSauce.hbm.xml");
+            configuration.AddFile(TPizzaTempSabadSauceConfigurationFile);
+
+            var TPizzaTempSabadToppingConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\TPizzaTempSabadTopping.hbm.xml");
+            configuration.AddFile(TPizzaTempSabadToppingConfigurationFile);
+
+            var TPizzaToppingConfigurationFile = HttpContext.Current.Server.MapPath
+              (@"~\Models\NHibernate\TPizzaTopping.hbm.xml");
+            configuration.AddFile(TPizzaToppingConfigurationFile);
+
             var TServicerConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TServicer.hbm.xml");
+          (@"~\Models\NHibernate\TServicer.hbm.xml");
             configuration.AddFile(TServicerConfigurationFile);
 
-            var TServicerForMahalehConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TServicerForMahaleh.hbm.xml");
-            configuration.AddFile(TServicerForMahalehConfigurationFile);
+            var TSubCheeseConfigurationFile = HttpContext.Current.Server.MapPath
+          (@"~\Models\NHibernate\TSubCheese.hbm.xml");
+            configuration.AddFile(TSubCheeseConfigurationFile);
 
-            var TServicerForMahalehByPeykConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TServicerForMahalehByPeyk.hbm.xml");
-            configuration.AddFile(TServicerForMahalehByPeykConfigurationFile);
+            var TSubSizeBreadConfigurationFile = HttpContext.Current.Server.MapPath
+          (@"~\Models\NHibernate\TSubSizeBread.hbm.xml");
+            configuration.AddFile(TSubSizeBreadConfigurationFile);
 
-            var TShiftConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TShift.hbm.xml");
-            configuration.AddFile(TShiftConfigurationFile);
+            var TSubTempSabadConfigurationFile = HttpContext.Current.Server.MapPath
+         (@"~\Models\NHibernate\TSubTempSabad.hbm.xml");
+            configuration.AddFile(TSubTempSabadConfigurationFile);
 
-            var TUserRolConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TUserRol.hbm.xml");
-            configuration.AddFile(TUserRolConfigurationFile);
+            var TSubTempSabadCheeseConfigurationFile = HttpContext.Current.Server.MapPath
+         (@"~\Models\NHibernate\TSubTempSabadCheese.hbm.xml");
+            configuration.AddFile(TSubTempSabadCheeseConfigurationFile);
 
-            var TUsersConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TUsers.hbm.xml");
-            configuration.AddFile(TUsersConfigurationFile);
+            var TSubTempSabadToppingConfigurationFile = HttpContext.Current.Server.MapPath
+         (@"~\Models\NHibernate\TSubTempSabadTopping.hbm.xml");
+            configuration.AddFile(TSubTempSabadToppingConfigurationFile);
 
-            var TVersionAppConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TVersionApp.hbm.xml");
-            configuration.AddFile(TVersionAppConfigurationFile);
+            var TSubToppingConfigurationFile = HttpContext.Current.Server.MapPath
+      (@"~\Models\NHibernate\TSubTopping.hbm.xml");
+            configuration.AddFile(TSubToppingConfigurationFile);
 
-            var TZarfiyatShiftPeyksConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TZarfiyatShiftPeyks.hbm.xml");
-            configuration.AddFile(TZarfiyatShiftPeyksConfigurationFile);
-
-            var TZarfiyatShiftServicerConfigurationFile = HttpContext.Current.Server.MapPath
-              (@"~\Models\NHibernate\TZarfiyatShiftServicer.hbm.xml");
-            configuration.AddFile(TZarfiyatShiftServicerConfigurationFile);
-
-            var TCGoZarfiyatShServiserConfigurationFile = HttpContext.Current.Server.MapPath
-          (@"~\Models\NHibernate\TCGoZarfiyatShServiser.hbm.xml");
-            configuration.AddFile(TCGoZarfiyatShServiserConfigurationFile);
-
-            var TLNoePayConfigurationFile = HttpContext.Current.Server.MapPath
-          (@"~\Models\NHibernate\TLNoePay.hbm.xml");
-            configuration.AddFile(TLNoePayConfigurationFile);
-
-            var TLVaziyatSabadConfigurationFile = HttpContext.Current.Server.MapPath
-          (@"~\Models\NHibernate\TLVaziyatSabad.hbm.xml");
-            configuration.AddFile(TLVaziyatSabadConfigurationFile);
-
-            var TTemporderConfigurationFile = HttpContext.Current.Server.MapPath
-         (@"~\Models\NHibernate\TTemporder.hbm.xml");
-            configuration.AddFile(TTemporderConfigurationFile);
-
-            var TSabadConfigurationFile = HttpContext.Current.Server.MapPath
-         (@"~\Models\NHibernate\TSabad.hbm.xml");
-            configuration.AddFile(TSabadConfigurationFile);
-
-            var TCGoZarfiyatShPeyksConfigurationFile = HttpContext.Current.Server.MapPath
-         (@"~\Models\NHibernate\TCGoZarfiyatShPeyks.hbm.xml");
-            configuration.AddFile(TCGoZarfiyatShPeyksConfigurationFile);
-
-            var THolidayConfigurationFile = HttpContext.Current.Server.MapPath
-      (@"~\Models\NHibernate\THoliday.hbm.xml");
-            configuration.AddFile(THolidayConfigurationFile);
-
-            var TOrderConfigurationFile = HttpContext.Current.Server.MapPath
-     (@"~\Models\NHibernate\TOrder.hbm.xml");
-            configuration.AddFile(TOrderConfigurationFile);
+            var TSubTypeBreadConfigurationFile = HttpContext.Current.Server.MapPath
+     (@"~\Models\NHibernate\TSubTypeBread.hbm.xml");
+            configuration.AddFile(TSubTypeBreadConfigurationFile);
 
             
-                 var TLVaziyatTahvilConfigurationFile = HttpContext.Current.Server.MapPath
-     (@"~\Models\NHibernate\TLVaziyatTahvil.hbm.xml");
-            configuration.AddFile(TLVaziyatTahvilConfigurationFile);
+                 var TTempOrderConfigurationFile = HttpContext.Current.Server.MapPath
+     (@"~\Models\NHibernate\TTempOrder.hbm.xml");
+            configuration.AddFile(TTempOrderConfigurationFile);
 
-            var TTamasbamaConfigurationFile = HttpContext.Current.Server.MapPath
-     (@"~\Models\NHibernate\TTamasbama.hbm.xml");
-            configuration.AddFile(TTamasbamaConfigurationFile);
+            var TUsersConfigurationFile = HttpContext.Current.Server.MapPath
+     (@"~\Models\NHibernate\TUsers.hbm.xml");
+            configuration.AddFile(TUsersConfigurationFile);
+
+
+            var TLawConfigurationFile = HttpContext.Current.Server.MapPath
+     (@"~\Models\NHibernate\TLaw.hbm.xml");
+            configuration.AddFile(TLawConfigurationFile);
+
+            var TContactusConfigurationFile = HttpContext.Current.Server.MapPath
+     (@"~\Models\NHibernate\TContactus.hbm.xml");
+            configuration.AddFile(TContactusConfigurationFile);
 
             var TAllQuestionsConfigurationFile = HttpContext.Current.Server.MapPath
-    (@"~\Models\NHibernate\TAllQuestions.hbm.xml");
+     (@"~\Models\NHibernate\TAllQuestions.hbm.xml");
             configuration.AddFile(TAllQuestionsConfigurationFile);
-
-            var TCodeTakhfifConfigurationFile = HttpContext.Current.Server.MapPath
-   (@"~\Models\NHibernate\TCodeTakhfif.hbm.xml");
-            configuration.AddFile(TCodeTakhfifConfigurationFile);
 
 
             ISessionFactory sessionFactory = configuration.BuildSessionFactory();

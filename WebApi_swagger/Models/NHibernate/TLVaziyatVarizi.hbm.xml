@@ -8,17 +8,9 @@
     <property name="TitelsVaziyatVarizi">
       <column name="Titels_Vaziyat_Varizi" sql-type="nvarchar" not-null="false" />
     </property>
-    <bag name="TOrder" inverse="true">
-      <key column="Vaziyat_Varizi_ID" />
-      <one-to-many class="TOrder" />
-    </bag>
-    <bag name="TPayForServicer" inverse="true">
-      <key column="Vaziyat_Varizi_ID" />
-      <one-to-many class="TPayForServicer" />
-    </bag>
-    <bag name="TTemporder" inverse="true">
-      <key column="Vaziat_Varizi_ID" />
-      <one-to-many class="TTemporder" />
+    <bag name="TTempOrder" inverse="true">
+      <key column="T_L_Vaziyat_Varizi_ID" />
+      <one-to-many class="TTempOrder" />
     </bag>
   </class>
 </hibernate-mapping>

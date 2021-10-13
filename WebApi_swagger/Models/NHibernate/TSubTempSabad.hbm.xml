@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TSubTempSabad" table="T_Sub_Temp_Sabad" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdSubTempSabad" column="ID_Sub_Temp_Sabad">
+      <generator class="native" />
+    </id>
+    <property name="TSubSizeBreadId">
+      <column name="T_Sub_Size_Bread_ID" sql-type="int" not-null="false" />
+    </property>
+    <property name="PriceSubSizeBread">
+      <column name="Price_Sub_Size_Bread" sql-type="int" not-null="false" />
+    </property>
+    <property name="TSubTypeBreadId">
+      <column name="T_Sub_Type_Bread_ID" sql-type="int" not-null="false" />
+    </property>
+    <property name="PriceSubTypeBread">
+      <column name="Price_Sub_Type_Bread" sql-type="int" not-null="false" />
+    </property>
+    <property name="PriceSubSumCheese">
+      <column name="Price_Sub_Sum_Cheese" sql-type="int" not-null="false" />
+    </property>
+    <property name="PriceSubSumTopping">
+      <column name="Price_Sub_Sum_Topping" sql-type="int" not-null="false" />
+    </property>
+    <property name="CountSubInt">
+      <column name="Count_Sub_int" sql-type="int" not-null="false" />
+    </property>
+    <property name="PriceOnesub">
+      <column name="Price_OneSub" sql-type="int" not-null="false" />
+    </property>
+    <property name="PriceSumSub">
+      <column name="Price_Sum_Sub" sql-type="int" not-null="false" />
+    </property>
+    <property name="TTempOrderId">
+      <column name="T_Temp_Order_ID" sql-type="bigint" not-null="false" />
+    </property>
+    <property name="TUsersId">
+      <column name="T_Users_ID" sql-type="bigint" not-null="false" />
+    </property>
+    <property name="TServicerId">
+      <column name="T_Servicer_ID" sql-type="int" not-null="false" />
+    </property>
+    <bag name="TSubTempSabadCheese" inverse="true">
+      <key column="T_Sub_Temp_Sabad_ID" />
+      <one-to-many class="TSubTempSabadCheese" />
+    </bag>
+    <bag name="TSubTempSabadTopping" inverse="true">
+      <key column="T_Sub_Temp_Sabad_ID" />
+      <one-to-many class="TSubTempSabadTopping" />
+    </bag>
+  </class>
+</hibernate-mapping>

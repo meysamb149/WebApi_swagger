@@ -1,27 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
-  <class name="TLOstan" table="T_L_Ostan" lazy="true" dynamic-update="true" >
+  <class name="TLOstan" table="T_L_Ostan"  lazy="true" dynamic-update="true" >
     <cache usage="read-write"/>
     <id name="IdOstan" column="ID_Ostan">
       <generator class="native" />
     </id>
     <many-to-one name="TLActive">
-      <column name="Active_ID" sql-type="int" not-null="false" />
+      <column name="T_L_Active_ID" sql-type="int" not-null="false" />
     </many-to-one>
     <property name="TitelsOstan">
       <column name="Titels_Ostan" sql-type="nvarchar" not-null="false" />
     </property>
     <bag name="TAddresses" inverse="true">
-      <key column="Ostan_ID" />
+      <key column="T_L_Ostan_ID" />
       <one-to-many class="TAddresses" />
     </bag>
     <bag name="TLCity" inverse="true">
-      <key column="Ostan_ID" />
+      <key column="T_L_Ostan_ID" />
       <one-to-many class="TLCity" />
-    </bag>
-    <bag name="TServicerForMahaleh" inverse="true">
-      <key column="Ostan_ID" />
-      <one-to-many class="TServicerForMahaleh" />
     </bag>
   </class>
 </hibernate-mapping>

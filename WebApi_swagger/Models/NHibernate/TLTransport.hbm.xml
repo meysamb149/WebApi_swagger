@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TLTransport" table="T_L_Transport" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdTransport" column="ID_Transport">
+      <generator class="native" />
+    </id>
+    <property name="TitlesTransport">
+      <column name="Titles_Transport" sql-type="nvarchar" not-null="false" />
+    </property>
+    <bag name="TPeyks" inverse="true">
+      <key column="T_L_Transport_ID" />
+      <one-to-many class="TPeyks" />
+    </bag>
+  </class>
+</hibernate-mapping>

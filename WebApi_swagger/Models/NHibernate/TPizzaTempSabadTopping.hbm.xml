@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TPizzaTempSabadTopping" table="T_Pizza_Temp_Sabad_Topping" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdPizzaTempSabadTopping" column="ID_Pizza_Temp_Sabad_Topping">
+      <generator class="native" />
+    </id>
+    <many-to-one name="TPizzaTopping">
+      <column name="T_Pizza_Topping_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TLPortionPizza">
+      <column name="T_L_Portion_Pizza_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TPizzaTempSabad">
+      <column name="T_Pizza_Temp_Sabad_ID" sql-type="bigint" not-null="false" />
+    </many-to-one>
+    <property name="Price">
+      <column name="Price" sql-type="int" not-null="false" />
+    </property>
+    <property name="DateCreate">
+      <column name="Date_Create" sql-type="datetime" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

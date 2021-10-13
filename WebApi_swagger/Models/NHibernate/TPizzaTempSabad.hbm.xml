@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TPizzaTempSabad" table="T_Pizza_Temp_Sabad" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdPizzaTempSabad" column="ID_Pizza_Temp_Sabad">
+      <generator class="native" />
+    </id>
+    <many-to-one name="TPizzaSizeBread">
+      <column name="T_Pizza_Size_Bread_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TPizzaCrust">
+      <column name="T_Pizza_Crust_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TUsers">
+      <column name="T_Users_ID" sql-type="bigint" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TServicer">
+      <column name="T_Servicer_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <property name="PricePizzaSizeSub">
+      <column name="Price_Pizza_Size_Sub" sql-type="int" not-null="false" />
+    </property>
+    <property name="PricePizzaCrust">
+      <column name="Price_Pizza_Crust" sql-type="int" not-null="false" />
+    </property>
+    <property name="PricePizzaSumCheese">
+      <column name="Price_Pizza_Sum_Cheese" sql-type="int" not-null="false" />
+    </property>
+    <property name="PricePizzaSumSauce">
+      <column name="Price_Pizza_Sum_Sauce" sql-type="int" not-null="false" />
+    </property>
+    <property name="PricePizzaSumTopping">
+      <column name="Price_Pizza_Sum_Topping" sql-type="int" not-null="false" />
+    </property>
+    <property name="CountPizzaInt">
+      <column name="Count_Pizza_int" sql-type="int" not-null="false" />
+    </property>
+    <property name="PriceOnepizza">
+      <column name="Price_OnePizza" sql-type="int" not-null="false" />
+    </property>
+    <property name="PriceSumPizza">
+      <column name="Price_Sum_Pizza" sql-type="int" not-null="false" />
+    </property>
+    <property name="TTempOrderId">
+      <column name="T_Temp_Order_ID" sql-type="bigint" not-null="false" />
+    </property>
+    <bag name="TPizzaTempSabadCheese" inverse="true">
+      <key column="T_Pizza_Temp_Sabad_ID" />
+      <one-to-many class="TPizzaTempSabadCheese" />
+    </bag>
+    <bag name="TPizzaTempSabadSauce" inverse="true">
+      <key column="T_Pizza_Temp_Sabad_ID" />
+      <one-to-many class="TPizzaTempSabadSauce" />
+    </bag>
+    <bag name="TPizzaTempSabadTopping" inverse="true">
+      <key column="T_Pizza_Temp_Sabad_ID" />
+      <one-to-many class="TPizzaTempSabadTopping" />
+    </bag>
+  </class>
+</hibernate-mapping>

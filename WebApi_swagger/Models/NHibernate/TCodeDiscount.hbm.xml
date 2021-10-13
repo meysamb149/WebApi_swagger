@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="WebApi_swagger" namespace="WebApi_swagger.Models" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TCodeDiscount" table="T_Code_Discount" lazy="true" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="IdCodeDiscount" column="ID_Code_Discount">
+      <generator class="native" />
+    </id>
+    <many-to-one name="TServicer">
+      <column name="T_Services_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <many-to-one name="TLActive">
+      <column name="Active_ID" sql-type="int" not-null="false" />
+    </many-to-one>
+    <property name="TitelsDiscountStr">
+      <column name="Titels_Discount_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="DarsadDiscountInt">
+      <column name="Darsad_Discount_int" sql-type="int" not-null="false" />
+    </property>
+    <property name="MablaghDiscountInt">
+      <column name="Mablagh_Discount_int" sql-type="int" not-null="false" />
+    </property>
+    <property name="DiscountForMinmablaghInt">
+      <column name="Discount_For_MinMablagh_int" sql-type="int" not-null="false" />
+    </property>
+    <property name="DateAz">
+      <column name="Date_Az" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="DateTa">
+      <column name="Date_Ta" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="UserCreateId">
+      <column name="User_Create_ID" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="DateCreate">
+      <column name="Date_Create" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="CodeTakfifStr">
+      <column name="Code_Takfif_str" sql-type="nvarchar" not-null="false" />
+    </property>
+    <bag name="TTempOrder" inverse="true">
+      <key column="T_Code_Discount_ID" />
+      <one-to-many class="TTempOrder" />
+    </bag>
+  </class>
+</hibernate-mapping>
